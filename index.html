@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./Styles/style.css">
+
+    <!-- BOUNCE CARDS -->
+    <script src="./Scripts/bouncecards.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- DECRYPTED TEXT -->
+    <script src="./Scripts/decrypted.js" defer></script>
+
+    <!-- TAGLINE -->
+   	<script src="./Scripts/script.js" defer></script>
+
+    <!-- Link to Google Fonts -->
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=BBH+Hegarty&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <!-- Linking Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+	<title>Electronic Portfolio</title>
+</head>
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+	  const containers = document.querySelectorAll('.stepper-container');
+	  
+	  containers.forEach(container => {
+	    const panels = Array.from(container.querySelectorAll('.step-panel'));
+	    if (panels.length === 0) return;
+	    
+	    let currentStep = 0; // Inactive state
+	    
+	    // Generate step indicators
+	    const row = container.querySelector('.step-indicator-row');
+	    row.innerHTML = '';
+	    
+	    panels.forEach((panel, index) => {
+	      const stepNum = index + 1;
+	      
+	      const indicator = document.createElement('div');
+	      indicator.className = 'step-indicator';
+	      
+	      const button = document.createElement('button');
+	      button.className = 'step-indicator-inner inactive';
+	      button.type = 'button';
+	      button.textContent = stepNum;
+	      button.dataset.step = stepNum;
+	      
+	      indicator.appendChild(button);
+	      
+	      row.appendChild(indicator);
+	    });
+	    
+	    const stepButtons = container.querySelectorAll('.step-indicator-inner');
+	    
+	    function updateDisplay() {
+	      // Update step buttons
+	      stepButtons.forEach(btn => {
+	        const step = parseInt(btn.dataset.step);
+	        btn.className = 'step-indicator-inner';
+	        
+	        if (step === currentStep && currentStep > 0) {
+	          btn.classList.add('active');
+	        } else if (step < currentStep) {
+	          btn.classList.add('complete');
+	        } else {
+	          btn.classList.add('inactive');
+	        }
+	      });
+	      
+	      // **CRITICAL: Hide ALL panels first, then show active one**
+	      panels.forEach(panel => panel.classList.remove('active'));
+	      
+	      if (currentStep > 0) {
+	        const activePanel = panels.find(p => parseInt(p.dataset.step) === currentStep);
+	        if (activePanel) {
+	          activePanel.classList.add('active');
+	        }
+	      }
+	      
+	      // Force stat-item height update
+	      const statItem = container.closest('.stat-item');
+	      if (statItem && currentStep === 0) {
+	        statItem.style.minHeight = '9vh';
+	      }
+	    }
+	    
+	    // **CLICK STEP 4 = RESET**
+	    stepButtons.forEach(btn => {
+	      btn.addEventListener('click', function() {
+	        const clickedStep = parseInt(this.dataset.step);
+	        
+	        if (clickedStep === panels.length) {
+	          // STEP 4 CLICKED → RESET TO MINIMUM HEIGHT
+	          currentStep = 0;
+	        } else {
+	          currentStep = clickedStep;
+	        }
+	        
+	        updateDisplay();
+	      });
+	    });
+	    
+	    updateDisplay(); // Start collapsed
+	  });
+	});
+</script>
+<body>
+	<nav>
+		<ul class="">
+			<div class="bottomMenu" id="bottomNav">
+				<img class="" style="float:left; padding-right: 100px; ">
+				
+
+				<!-- SECTIONS ORGANIZATION -->
+				<a class="Home" href="#Home">Home</a>
+				<a href="#Extracurriculars">Extracurriculars</a>
+				<a class="Service" href="service.html">Service</a>
+				<a href="#wbl">WBL</a>
+				<a class="About" href="#About">About</a>
+
+			</div>
+		</ul>
+	</nav>
+
+	<main>
+		<!--HOMESCREEN -->
+		<section class="portfolio-section" id="Home">
+			<h1 class="name">Angelina <br>Alcantra Pao</h1>
+
+			<div class="contact-list">
+				<a href="https://github.com/aiea-nglnx" class="contact-link" title="@aiea-nglnx"><img src="https://img.shields.io/badge/GitHub-%2370405B?style=flat&logo=github&color=%2370405B" alt="GitHub" style="height:2rem"></a>
+                <a href="tel:+18087458751" class="contact-link" title="+1 (808) 745-8751"><i class="fa-solid fa-phone"></i></a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=aiea.7nglnx@gmail.com" target="_blank" rel="noopener noreferrer" class="contact-link" title="aiea.7nglnx@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+			</div>
+
+			<h2 class="tagline">
+				<span>I am a </span>
+				<span id="IAm"></span>
+				<br>
+			</h2>
+			<div id="decrypted-root">
+				<div id="line1"></div>
+				<div id="line2"></div>
+			</div>
+
+			
+				
+		</section>
+	</main>
+	<section class="about-section" id="About">
+		<div class="me" id="container">
+			<div class="me-text" id="text-container">
+				<h2 class="title">About Me</h2>
+				<hr class="divider">
+
+				<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+			</div>
+			<!-- Image Insert -->
+			<img class="about-photo" id="me-photo" src="https://picsum.photos/200/200?grayscale">
+		</div>
+		
+		<div class="objective" id="container">
+			<!-- Image Insert -->
+			<img class="about-photo" id="obj-photo"src="https://picsum.photos/400/400?grayscale">
+			<div class="objective-text" id="text-container">
+				<h2 class="title">My Objective</h2>
+				<hr class="divider2">
+
+				<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+			</div>
+		</div>	
+
+		<div class="goal" id="container">
+			<div class="goal-text" id="text-container">
+				<h2 class="title">My Goal</h2>
+				<hr class="divider3">
+
+				<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+			</div>
+
+			<!-- Image Insert -->
+			<img class="about-photo" id="goal-photo" src="https://picsum.photos/500/500?grayscale">
+		</div>		
+	</section>
+	
+	<section class="skills-section" id="Skills">
+			<h1 class="title">My Skills</h1>
+			<h6>2020 - 2025</h6>
+			<h6>15+ projects</h6>
+			<div class="stat-strip">
+				<div class="stat-item">
+					<h2 class="item-title">HTML</h2>
+					<p class="info">5 Years</p>
+					<div class="meter">
+				    	<span></span><span></span><span></span><span></span><span></span>
+				  	</div>
+				</div>
+				<div class="stat-item">
+					<h2 class="item-title">CSS</h2>
+					<p class="info">5 Years</p>
+					<div class="meter">
+				    	<span></span><span></span><span></span><span></span><span></span>
+				  	</div>
+				</div>
+				<div class="stat-item">
+					<h2 class="item-title">Javascript</h2>
+					<p class="info">2 Years |<span> 3 projects</span></p>
+					<div class="meter">
+				    	<span></span><span></span>
+				  	</div>
+				</div>
+				<div class="stat-item">
+					<h2 class="item-title">Java</h2>
+					<p class="info">1 year |<span> 3 Projects</span></p>
+					<div class="meter">
+				    	<span></span>
+				  	</div>
+				</div>
+				<div class="stat-item" id="full">
+					<h2 class="item-title">ArcGIS & GIS</h2>
+					<p class="info">2 year |<span> 5 Projects</span></p>
+					<div class="meter">
+				    	<span></span><span></span>
+				  	</div>
+					<!-- INPUT OVERVIEW -->
+					<div class="stepper-container">
+					  <div class="step-circle-container">
+					    <div class="step-indicator-row">
+					      <!-- JS generates these -->
+					    </div>
+					  </div>
+					  
+					  <div class="step-content-wrapper">
+					    <div class="step-panel" data-step="1">
+					      <h2>Agriculture Use and Polluted Waters</h2>
+					      <img src="Public/pictures/agriculture-use.png" style="width:fit-content; height:24vh; object-fit:cover; border-radius:15px; margin:1rem 0;">
+					      
+					    </div>
+					    <div class="step-panel" data-step="2">
+					      <h2>Streams & Conduits</h2>
+					      <img src="Public/pictures/streams.png" style="width:fit-content; height:24vh; object-fit:cover; border-radius:15px; margin:1rem 0;">
+					    </div>
+					    <div class="step-panel" data-step="3">
+					      <h2>Firestations Assessment</h2>
+					      <img src="Public/pictures/firestation.png" style="width:fit-content; height:24vh; object-fit:cover; border-radius:15px; margin:1rem 0;">
+					    </div>
+					    <div class="step-panel" data-step="4">			
+					    </div>
+					  </div>
+					</div>
+
+
+				</div>
+				<div class="stat-item" id="full">
+					<h2 class="item-title">Figma</h2>
+					<p class="info">2 year |<span>3 Projects</span></p>
+					<div class="meter">
+				    	<span></span><span></span>
+				  	</div>
+					<!-- INPUT OVERVIEW -->
+					<div class="stepper-container">
+					  <div class="step-circle-container">
+					    <div class="step-indicator-row">
+					      <!-- JS generates these -->
+					    </div>
+					  </div>
+					  
+					  <div class="step-content-wrapper">
+					    <div class="step-panel" data-step="1">
+					      <h2>Seasonal Munchies</h2>
+					      <img src="Public/pictures/csm.png" style="width:fit-content; height:27vh; object-fit:cover; border-radius:15px; margin:1rem 0;">
+					      
+					    </div>
+					    <div class="step-panel" data-step="2">
+					      <h2>Bah Humbug Cookies</h2>
+					      <img src="Public/pictures/bhc.png" style="width:fit-content; height:27vh; object-fit:cover; border-radius:15px; margin:1rem 0;">
+					    </div>
+					    <div class="step-panel" data-step="3">
+					      <h2>Pop-Up Penguins</h2>
+					      <img src="Public/pictures/pup.png" style="width:fit-content; height:27vh; object-fit:cover; border-radius:15px; margin:1rem 0;">
+					    </div>
+					    <div class="step-panel" data-step="4">
+					      <h2>SolarSparks Innovations Exp</h2>
+					      <img src="Public/pictures/ssi.png" style="width:fit-content; height:27vh; object-fit:cover; border-radius:15px; margin:1rem 0;">
+					    </div>
+					    <div class="step-panel" data-step="5">
+					      
+					    </div>
+					  </div>
+					</div>
+				</div>
+			</div>
+			<div class="skill-loop">
+				<div class="skills">
+					<div class="skills-group" id="knowledge">HTML5</div>
+					<div class="skills-group" id="knowledge">CSS3</div>
+					<div class="skills-group" id="knowledge">Python</div>
+					<div class="skills-group" id="knowledge">Cisco</div>
+					<div class="skills-group" id="knowledge">ArcGIS</div>
+					<div class="skills-group" id="knowledge">Figma</div>
+					<div class="skills-group" id="knowledge">SQL</div>
+					<div class="skills-group" id="knowledge">Git</div>
+					<div class="skills-group" id="knowledge">Github</div>
+					<div class="skills-group" id="knowledge">Java</div>
+					<div class="skills-group" id="knowledge">JavaScript</div>
+					<div class="skills-group" id="knowledge">Slack</div>
+
+				</div>
+				<div aria-hidden class="skills">
+					<div class="skills-group" id="knowledge">HTML5</div>
+					<div class="skills-group" id="knowledge">CSS3</div>
+					<div class="skills-group" id="knowledge">Python</div>
+					<div class="skills-group" id="knowledge">Cisco</div>
+					<div class="skills-group" id="knowledge">ArcGIS</div>
+					<div class="skills-group" id="knowledge">Figma</div>
+					<div class="skills-group" id="knowledge">SQL</div>
+					<div class="skills-group" id="knowledge">Git</div>
+					<div class="skills-group" id="knowledge">Github</div>
+					<div class="skills-group" id="knowledge">Java</div>
+					<div class="skills-group" id="knowledge">JavaScript</div>
+					<div class="skills-group" id="knowledge">Slack</div>
+				</div>
+				
+			</div>
+		</section>	
+
+	<section class="ec-section" id="Extracurriculars">
+	    <h1 class="title">Extracurriculars</h1>
+	    
+	    <div id="bounce-root">
+	    <div
+	      class="bounceCardsContainer"
+	      id="bounceCardsContainer"
+	      style="position: relative; width: 500px; height: 250px;">
+	      <!-- Cards will be injected here by scripts/bounceCards.js -->
+	    </div>
+	  </div>
+  </section>
+
+	<section class="project-section" id="Projects">
+		<h1 class="title">Projects</h1>
+
+	</section>
+
+	<section class="ps-section" id="Quote">
+		<h1>"I couldn’t keep calling misery "survival". Maybe survival wasn’t gripping the past with clenched fists—it was learning how to open them."</h1>
+		<h4>Angelina Alcantra Pao</h4>
+	</section>
+
+	
+</body>
+</html>

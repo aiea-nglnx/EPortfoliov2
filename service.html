@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="./Styles/service.css">
+    <script src="./Scripts/countup.js" defer></script>
+
+    <script src="./Scripts/domegallery.js" defer></script>
+
+
+	<!-- Link to Google Fonts -->
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=BBH+Hegarty&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <!-- Linking Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+	<title>Service Page</title>
+</head>
+<body>
+
+	<nav>
+		<ul class="">
+			<div class="bottomMenu" id="bottomNav">
+				<img class="" style="float:left; padding-right: 100px; ">
+				
+
+				<!-- SECTIONS ORGANIZATION -->
+				<a class="Home" href="index.html">Home</a>
+				<a href="#Extracurriculars">Extracurriculars</a>
+				<a class="Service" href="service.html">Service</a>
+				<a href="#wbl">WBL</a>
+				<a class="About" href="#About">About</a>
+
+			</div>
+		</ul>
+	</nav>
+	<section class="hourcount-section" id="Count">
+		<div>
+		  	<span data-countup data-from="0" data-to="60" data-duration="3" data-separator="," class="count-up-text"></span>
+		  	<p class="service-label" id="service-text">SERVICE HOURS</p>
+		 </div>
+
+	</section>
+
+	<section class="quote-section" id="Quote">
+		<h1>"A little consideration, a little thought for others, makes all the difference."</h1>
+		<h6>Eeyore (Winnie the Pooh)</h6>
+	</section>
+
+	<section class="service-gallery" id="gallery">
+		<div id="root" class="sphere-root" data-min-radius="900" data-segments="34" data-fit="1"></div>
+	    <main class="sphere-main">
+	      <div class="stage">
+	        <div class="sphere" id="sphere"></div>
+	      </div>
+
+	      <div class="viewer" id="viewer">
+	        <div class="scrim" id="scrim"></div>
+	        <div class="frame" id="frame" style="width:50vmin;height:50vmin;border-radius:var(--enlarge-radius);"></div>
+	      </div>
+	    </main>
+	</section>
+  
+</body>
+</html>

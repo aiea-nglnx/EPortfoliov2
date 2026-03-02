@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="./Styles/nths.css">
+
+	<script src="./Scripts/countup.js" defer></script>
+	<script src="./Scripts/list.js" defer></script>
+
+
+
+    <!-- SCRIPTS -->
+
+
+    <!-- Link to Google Fonts -->
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=BBH+Hegarty&family=Figtree:ital,wght@0,300..900;1,300..900&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Linking Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+	<title>NTHS</title>
+</head>
+<body>
+	<nav>
+		<ul class="">
+			<div class="bottomMenu" id="bottomNav">
+				<img class="" style="float:left; padding-right: 100px; ">
+				
+
+				<!-- SECTIONS ORGANIZATION -->
+				<a class="Home" href="index.html">Home</a>
+				<a href="index.html">Extracurriculars</a>
+				<a class="Service" href="service.html">Service</a>
+				<a href="#wbl">WBL</a>
+				<a class="About" href="#About">About</a>
+
+			</div>
+		</ul>
+	</nav>
+
+	<section class="hero-section">
+
+		<div class="titles">
+			<h4 class="title-left">
+				National<span class="emphasis"> Technical</span>
+			</h4>
+			<h4 class="title-right">
+				<span class="emphasis">Honor     </span>Society
+			</h4>
+		</div>
+
+		<!-- NTHS logo -->
+		<img src="Public/pictures/nths.png" class="logo">
+		
+
+
+			<h4 class="one-line">Success Favors the Prepared Mind</h4>
+			<h4 class="one-line-2">Felicitas Menti Instructae Favet</h4>	
+	</section>
+
+<!-- 2 -->
+	<section class="about-section">
+		<h2 class="title">About</h2>
+		<hr class="divider">
+
+		<div class="about-header">
+			<h4 class="member-subheading">
+			NTHS Member
+			<br>
+			NTHS President
+			</h4>
+			<br>
+			<span class="years">
+				2025-2026 Chapter
+			</span>
+		</div>
+		
+		<div class="about-content">
+			<div class="about-text">
+				<p class="word">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+			</div>
+			<!-- ANIMATED LIST -->
+			<div id="animatedList"></div>
+			
+		</div>
+	</section>
+
+<!-- 3 -->
+	<section class="achievements-section">
+		<h2 class="title">Achievements</h2>
+		<hr class="divider2">
+
+		<!-- Carousel --->
+		<div class="ach-grid">
+			<div class="induction" id="ach">
+				<h2 class="induct-subheading" id="subheading">NTHS Induction</h2>
+				<h4 class="date">2024</h4>
+
+				<div class="carousel">
+					<div class="carousel-track">
+						<img src="https://picsum.photos/200/200?grayscale"  class="carousel-item">
+						<img src="https://picsum.photos/300/300?grayscale"  class="carousel-item">
+						<img src="https://picsum.photos/400/400?grayscale"  class="carousel-item">
+						<img src="https://picsum.photos/500/500?grayscale"  class="carousel-item">
+					</div>
+				</div>
+				<div id="ls-pills" style="opacity:1;"></div>
+			</div>
+			<div class="lifesmarts" id="ach">
+				<h2 class="ls-subheading" id="subheading">LifeSmarts 2025</h2>
+				<h4 class="date">February 21</h4>
+
+				<div class="carousel">
+					<div class="carousel-track">
+						<img src="https://picsum.photos/200/200?grayscale"  class="carousel-item">
+						<img src="https://picsum.photos/300/300?grayscale"  class="carousel-item">
+						<img src="https://picsum.photos/400/400?grayscale"  class="carousel-item">
+					</div>
+				</div>
+			</div>		
+		</div>
+	</section>
+
+</body>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+	  const observer = new IntersectionObserver((entries) => {
+	    entries.forEach(entry => {
+	      if (entry.isIntersecting) {
+	        entry.target.classList.add('in-view');
+	      }
+	    });
+	  }, { threshold: 0.4 });
+
+	  // Find ALL sections and observe them
+	  document.querySelectorAll('.hero-section').forEach(section => {
+	    observer.observe(section);
+	  });
+	});
+</script>
+
+<script>
+	document.querySelectorAll('#ach').forEach(container => {
+		initCarousel(container);
+	});
+
+	function initCarousel(container) {
+		const items = container.querySelectorAll('.carousel-item');
+		const total = items.length;
+		let current = 0;
+		const intervalMs = 3000;
+		const words = [
+			"01",
+			"02",
+			"03",
+			"04"
+		];
+
+		const pillEl = container.querySelector('#ls-pills');
+
+		function updateCarousel() {
+			items.forEach((item, index) => {
+				let offset = (index - current + total) % total;
+
+				// CONTROL THE DIFFERENT TIMES IT SPINS
+				 if (offset === 0) {
+			        // front
+			        item.style.opacity = '1';
+			        item.style.filter = 'none';
+			        item.style.transform = 'translateX(0px) scale(1)';
+			        item.style.zIndex = 4;
+			      } else if (offset === 1) {
+			        // right behind
+			        item.style.opacity = '0.75';
+			        item.style.filter = 'brightness(0.92)';
+			        item.style.transform = 'translateX(25%) scale(0.94)';
+			        item.style.zIndex = 3;
+			      } else if (offset === 2) {
+			        // left behind
+			        item.style.opacity = '0.65';
+			        item.style.filter = 'brightness(0.85)';
+			        item.style.transform = 'translateX(-25%) scale(0.92)';
+			        item.style.zIndex = 2;
+			      } else if (offset === 3) {
+			        // far back (4th image) - subtle preview
+			        item.style.opacity = '0.4';
+			        item.style.filter = 'brightness(0.8)';
+			        item.style.transform = 'translateX(0px) scale(0.88)';
+			        item.style.zIndex = 1;
+			      } else {
+			        // extras hidden
+			        item.style.opacity = '0';
+			        item.style.zIndex = 0;
+			      }
+			});
+			// UPDATE WORD
+			if (pillEl) {
+				pillEl.textContent = words[current] || "";
+			}
+		}
+
+		function goNext() {
+			current = (current + 1) % total;
+			updateCarousel();
+		}
+
+		// START & CONTROL INTERVALS
+		updateCarousel();
+		setInterval(goNext, intervalMs);
+	}
+</script>
+
+</html>
