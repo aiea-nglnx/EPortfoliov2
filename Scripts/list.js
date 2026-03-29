@@ -210,15 +210,15 @@ const items = [
     body: "<p>There are only 2 existing & active NTHS chapters in the state of Hawai'i. <ul><li>Waimea</li><li>Waipahu</li></ul></p>" 
   },
   { 
-    title: "Core 4: Career Development", 
+    title: "Core 1: Career Development", 
     body: "<p>Help members build employability skills, explore career paths, and connect with employers</p>" 
   },
   { 
-    title: "Core 4: Leadership", 
+    title: "Core 2: Leadership", 
     body: "<p>Opportunities for members to develop leadership qualities, take initative, and responsibility.</p>" 
   },
   { 
-    title: "Core 4: Service", 
+    title: "Core 3: Service", 
     body: "<p>Community engagement through project that utilize CTE skills.</p>" 
   },
   { 
