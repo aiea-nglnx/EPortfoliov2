@@ -24,7 +24,7 @@ body {
 	transform: translateX(-50%);
 	background: #4C1F44;
 	overflow: hidden;
-	padding: 8px 15px;
+	padding: 5px 15px;
 	border-radius: 50px;
 	box-shadow: 0 0px 14px -7px #4C1F44;
 	display: flex;
@@ -39,7 +39,7 @@ body {
 	color: #F9F6EE;
 	transition: 0.2s;
 	text-align: center;
-	padding: 10px 20px;
+	padding: 7px 13px;
 	text-decoration: none;
 	font-family: Figtree;
 	font-optical-sizing: 	auto;
@@ -61,7 +61,7 @@ body {
 	display: flex;
 	align-items: 	center;
 	background: #F7F5ED;	
-	padding: 8px 8px;
+	padding: 9px 13px;
 	border-radius: 	999px;
 	gap: 10px;
 }

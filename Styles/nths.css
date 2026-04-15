@@ -1,11 +1,11 @@
-/* MAIN Body CSS */
 /* MAIN BODY CSS */
-html, body {
+body {
 	margin: 0;
 	padding: 0;
 	scroll-behavior: smooth;
 	background: #F7F5ED;
- 	overflow-x: hidden;
+	overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .title {
@@ -24,7 +24,7 @@ html, body {
 	transform: translateX(-50%);
 	background: #4C1F44;
 	overflow: hidden;
-	padding: 8px 15px;
+	padding: 5px 15px;
 	border-radius: 50px;
 	box-shadow: 0 0px 14px -7px #4C1F44;
 	display: flex;
@@ -39,7 +39,7 @@ html, body {
 	color: #F9F6EE;
 	transition: 0.2s;
 	text-align: center;
-	padding: 10px 20px;
+	padding: 7px 13px;
 	text-decoration: none;
 	font-family: Figtree;
 	font-optical-sizing: 	auto;
@@ -61,7 +61,7 @@ html, body {
 	display: flex;
 	align-items: 	center;
 	background: #F7F5ED;	
-	padding: 8px 8px;
+	padding: 9px 13px;
 	border-radius: 	999px;
 	gap: 10px;
 }
@@ -72,7 +72,6 @@ html, body {
 	font-size: 	1.6rem;
 }
 
-
 .contact-icon:hover	 {
 	color: #B9648C;
 	bottom: 0.5rem;
@@ -80,6 +79,7 @@ html, body {
 	transform: scale(1.3);
 	transition: transform 0.3 ease, color 0.3s;
 }
+
 
 .contact-pill	.contact-divider {
 	width: 2px;
