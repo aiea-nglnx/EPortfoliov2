@@ -224,7 +224,6 @@ body {
 
 /* DEFINITION SECTION */
 .definition-section {
-	height: 100vh;
 	padding: 70px 60px;
 	margin: 0 auto;
 	position: relative;
@@ -652,7 +651,7 @@ body {
 /* FOCUS & HIGHLIGHT */
 
 .role2 {
-	min-height: 100vh;
+	height: 100vh;
 	padding: 60px 15px;
 	margin-left: 20px;
 	margin-right: 20px;
