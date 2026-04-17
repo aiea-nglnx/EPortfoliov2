@@ -651,8 +651,10 @@ body {
 /* FOCUS & HIGHLIGHT */
 
 .role2 {
-	height: 100vh;
 	padding: 60px 15px;
+	position: relative;
+	overflow: hidden;
+	flex-direction: column;
 	margin-left: 20px;
 	margin-right: 20px;
 	display: flex;
