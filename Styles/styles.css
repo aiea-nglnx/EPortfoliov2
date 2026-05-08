@@ -257,6 +257,18 @@ body {
   border-radius: 16px; /* optional, just for style */
 }
 
+.about-photo img#me-photo, #me-photo {
+	object-position: 50% 20%;
+}
+
+.about-photo img#obj-photo, #obj-photo {
+	object-position: 50% 70%;
+}
+
+.about-photo img#goal-photo, #goal-photo {
+	object-position: 50% 60%;
+}
+
 #text-container {
   position: relative;
 }
