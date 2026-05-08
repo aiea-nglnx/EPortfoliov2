@@ -1,7 +1,7 @@
 window.onload = function () {
   const wordInputEl = document.getElementById("IAm");
 
-  const iAmWords = ["Marauder", "Leader", "Troubleshooter", "Storyteller", "Designer"];
+  const iAmWords = ["Marauder", "UCI Anteater 🐜🍴", "Leader", "Troubleshooter", "Storyteller", "Designer"];
   
   let iAmIndex = 0;
   let charIndex = 0;
