@@ -473,6 +473,80 @@ body {
   transform: translateY(-1px);
 }
 
+/* FINAL CAPSTONE */
+.capstone-section {
+	padding: 70px 20px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	flex-direction: 	column;
+	background-color: #F7F5ED;
+}
+
+.capstone-bg {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	display: block;
+	pointer-events: none;
+	z-index: 0;
+}
+
+.capstone-section > *:not(.capstone-bg) {
+  position: relative;
+  z-index: 1;
+}
+
+.capstone-header {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: left;
+	margin-bottom: 40px;
+	margin-left: 	5.5rem;
+}
+
+.capstone-header span {
+	color: #634052;
+	font-style: italic;
+	font-weight: 600;
+	font-family: 'Figtree';
+	font-size: 	0.95rem;
+	margin-bottom: 	-1rem;
+}
+
+.capstone-header .title {
+	text-align: left;
+}
+
+.capstone-header p {
+	margin-top: -1rem;
+	font-family: 'Figtree';
+	font-weight: 400;
+	font-size: 1.2rem;
+	width: 70%;
+}
+
+.capstone-embed {
+	margin-left: 5.5rem;
+	justify-content: start;
+	align-items: start;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.capstone-embed iframe {
+    width: 1200px;
+    height: 700px;
+    margin-top:  20px;
+}
+
+
 /* AWARD SECTIONS */
 .award-section {
 	padding: 70px 60px;
