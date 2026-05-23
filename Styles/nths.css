@@ -610,11 +610,11 @@ position: 	relative	;
 }
 
 .carousel-item img#induction3, #induction3 {
-	object-position: 50% 30%;
+	object-position: 5%;
 }
 
 .carousel-item img#induction1, #induction1 {
-	object-position: 40%;
+	object-position: 50% 20%;
 }
 
 #ld-pills {

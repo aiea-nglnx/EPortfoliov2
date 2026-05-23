@@ -5,8 +5,7 @@
     "Public/pictures/DSCF1554.jpg", // NTHS
     'Public/pictures/leocover.jpg', // LEO Club
     'Public/pictures/ietcover.jpg', // IET Ambassador
-    'Public/pictures/skillsusa.jpg', // SkillsUSA
-    'Public/pictures/IMG_2268.jpeg'  // 
+    'Public/pictures/skillsusa.jpg' // SkillsUSA 
   ];
 
   // Titles/captions
@@ -14,30 +13,27 @@
     'NTHS',
     'LEO Club',
     'IET Ambassador',
-    'SkillsUSA',
-    'Miscellaneous'
+    'SkillsUSA'
   ];
 
   const links = [
     'nths.html',
     'leo.html',
     'iet.html',
-    'skills.html',
-    'misc.html'
+    'skills.html'
   ];
 
-  const containerWidth = 500; // px
-  const containerHeight = 250; // px
+  const containerWidth = 600; // px
+  const containerHeight = 300; // px
 
   const animationDelay = 1; // seconds
   const animationStagger = 0.08; // seconds
   const easeType = 'elastic.out(1, 0.5)'; // GSAP ease string
   const transformStyles = [
     'rotate(5deg) translate(-150px)',
-    'rotate(0deg) translate(-70px)',
-    'rotate(-5deg)',
-    'rotate(5deg) translate(70px)',
-    'rotate(-5deg) translate(150px)'
+    'rotate(-4deg) translate(-70px)',
+    'rotate(8deg) translate(70px)',
+    'rotate(-4deg) translate(150px)'
   ];
   const enableHover = true;
   // -----------------------------------------------------------------------

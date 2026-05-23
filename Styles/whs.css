@@ -1,0 +1,604 @@
+/* MAIN BODY CSS */
+body {
+	margin: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+	background: #F7F5ED;
+	overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.title {
+	text-align: center;
+	font-family: 'BBH Hegarty';
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	font-size: 3.5rem;
+	color: #4C1F44;
+}
+
+.bottomMenu {
+	position: 	fixed	;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: #4C1F44;
+	overflow: hidden;
+	padding: 5px 15px;
+	border-radius: 50px;
+	box-shadow: 0 0px 14px -7px #4C1F44;
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+	z-index: 10;
+}
+
+.bottomMenu a {
+	float: left;
+	display: block;
+	color: #F9F6EE;
+	transition: 0.2s;
+	text-align: center;
+	padding: 7px 13px;
+	text-decoration: none;
+	font-family: Figtree;
+	font-optical-sizing: 	auto;
+	font-weight: 600;
+	font-size: 1.08rem;
+}
+
+.bottomMenu a:hover {
+	color: #B9648C;
+	transition: 0.2s;
+}
+
+.nav-logo {
+  height: 55px;
+  width: auto;
+}
+
+.contact-pill {
+	display: flex;
+	align-items: 	center;
+	background: #F7F5ED;	
+	padding: 9px 13px;
+	border-radius: 	999px;
+	gap: 10px;
+}
+
+.contact-pill	a {
+	color: #4C1F44;
+	text-decoration: 	none;
+	font-size: 	1.6rem;
+}
+
+.contact-icon:hover	 {
+	color: #B9648C;
+	bottom: 0.5rem;
+	cursor: pointer;
+	transform: scale(1.3);
+	transition: transform 0.3 ease, color 0.3s;
+}
+
+.contact-pill	.contact-divider {
+	width: 2px;
+	height: 20px;
+	background: #E4D8D8;
+}
+
+/* HOME PAGE SECTION */
+.hs-section {
+  position: relative;
+  z-index: 2;
+	height: 100vh;
+	display: flex;
+	align-items: 	center;
+	justify-content: center;
+}
+
+#hs-bg {
+	/*OVERLAY */
+	filter: brightness(110%);
+  background-image: 
+  	linear-gradient(
+		  180deg, 
+		  rgba(0,0,0,1) 0%, 
+		  rgba(255,255,255,0) 35%, 
+		  rgba(255,255,255,0) 80%, 
+		  rgba(0,0,0,1) 100%
+  	),
+  	url('../Public/pictures/hshp.png')
+  	;
+  background-size: cover;
+  background-position: 	center;
+  width: 100%;
+  height: 105%;
+  position: 	absolute;
+  left: 0;
+  z-index: 1;
+}
+
+/* EC SECTION */
+.ec-section {
+	position: relative;
+	overflow: hidden;
+	padding: 60px 20px;
+	height: 100vh;
+
+	margin: 0 auto;
+	background: #D8ABC0;
+}
+
+.ec-bg {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	display: block;
+	pointer-events: none;
+	z-index: 0;
+}
+
+.ec-header {
+	margin: 	auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.ec-header p {
+	margin-top: 	-1rem;
+	font-family: 'Figtree';
+	font-weight: 500;
+	color: #4C1F44;
+	font-size: 1.4rem;
+}
+
+.ec-header span {
+	color: #634052;
+	font-style: 	italic;
+	font-weight: 	600;
+	font-family: 	'Figtree';
+	font-size: 	1rem;
+}
+
+.ec-section > *:not(.ec-bg) {
+  position: relative;
+  z-index: 1;
+}
+
+
+.ec-year {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	padding-top: 0.3rem;
+	font-size: 1.1rem;
+	text-transform: 	uppercase	;
+	font-family: 'Figtree';
+	font-weight: 700;
+	color: #634052;
+}
+
+.pill {
+	background-color: rgba(238, 231, 227, 0.5);
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+	padding-top: 0.3rem;
+	padding-bottom: 0.3rem;
+	height: min-content;
+	border-width: 2px;
+	border-style: solid;
+	border-color: rgba(238, 231, 227);
+	border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0.8rem; 
+}
+
+
+
+/* BOUNCE CARDS */
+.bounceCardsContainer {
+  position: absolute;
+  display: flex;
+  min-height: 270px;
+  justify-content: center;
+  align-items: center;
+  width: min(1100px, 95%);
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.card {
+	top: 120px;
+  position: absolute;
+  height: 282px;
+  aspect-ratio: 4 / 3;
+  border: 5px solid #fff;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow:  0 10px 25px #E4D8D8;
+  transform-origin: center;
+  will-change: transform;
+  cursor: pointer;
+  background: #fff;
+}
+
+.card .image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display:block;
+}
+
+.card-caption {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%) translateY(6px);
+	bottom: 16px;
+	padding: 8px 12px;
+	font-size: 1.3rem;
+	pointer-events: none;
+	font-family: "Figtree";
+
+	background: rgba(0,0,0,0.65);
+  color: #fff;
+  padding: 12px 12px;
+  border-radius: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+	opacity: 0;
+}
+
+/* COMPETITIONS SECTION */
+.comp-sect {
+	padding: 70px 20px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	flex-direction: 	column;
+	background-color: #F7F5ED;
+}
+
+.comp-bg {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	display: block;
+	pointer-events: none;
+	z-index: 0;
+}
+
+.comp-sect > *:not(.comp-bg) {
+  position: relative;
+  z-index: 1;
+}
+
+.comp-header {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: left;
+	margin-bottom: 40px;
+	margin-left: 	5.5rem;
+}
+
+.comp-header span {
+	color: #634052;
+	font-style: italic;
+	font-weight: 600;
+	font-family: 'Figtree';
+	font-size: 	0.95rem;
+	margin-bottom: 	-1rem;
+}
+
+.comp-header .title {
+	text-align: left;
+}
+
+.comp-header p {
+	margin-top: -1rem;
+	font-family: 'Figtree';
+	font-weight: 400;
+	font-size: 1.2rem;
+}
+
+.competition-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 580px));
+	gap: 2.5rem;
+	margin-left: 5.5rem;
+	justify-content: start;
+	align-items: start;
+}
+
+.comp-card {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	background: white;
+	padding: 0;
+	height: auto;
+	box-shadow: 0 18px 40px #E4D8D8;
+	border-radius: 20px;
+	overflow: hidden;
+	font-family: 	'Figtree';
+}
+
+.comp-content {
+	order: 2;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	width: 100%;
+}
+
+.comp-place {
+	position: relative;
+	overflow: hidden;
+	height: 260px;
+	order: 	1;
+}
+
+.badge {
+	order: 1;
+	z-index: 30;
+	position: absolute;
+	top: 1rem;
+	left: 	0.75rem;
+	background: #B35681;
+	box-shadow: 0 5px 10px #7B5167;
+	color: #F7F5ED;
+	padding: 10px 12px;
+	border-radius: 12px;
+	font-size: 1.1rem;
+	font-weight: 600;
+}
+
+#cp {
+	background: #F4E27B;
+	box-shadow: 0 5px 10px #8E7C67;
+}
+
+#ls {
+	background: #374981;
+	box-shadow: 0 5px 10px #253156;
+}
+
+#fiveo {
+	background: #5A94C4;
+	box-shadow: 0 5px 10px #316087; 
+
+}
+
+.comp-preview {
+	order: 	0;
+	width: 100%;
+  position: relative	;
+ 	overflow: hidden;
+  object-fit: cover;
+  height: 270px; 
+
+}
+
+.comp-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+   object-position: center;
+}
+
+.comp-preview img#haccimg, #haccimg {
+	object-position: 50% 70%;
+}
+
+#cyber {
+	object-position: 	bottom;
+}
+
+.comp-text .bar {
+	order: 	2;
+	height: 2px;
+	width: 30%;
+	background: #833967;
+	margin-top: 15px;
+	margin-bottom: 25px;
+}
+
+.comp-title {
+	order: 	1;
+	font-size: 1.8rem;
+	font-weight: 600;
+	margin-bottom: 0.5rem;
+}
+
+.comp-text {
+	margin-top: -5rem;
+	margin-bottom: -1.5rem;
+	order: 2;
+	flex: 	1;
+	padding: 	3rem 1.5rem;
+}
+
+.comp-text h3 {
+	font-weight: 	900;
+	font-size: 	1.6rem;
+	font-family: 'Figtree';
+	color: 	#4C1F44;
+}
+
+.comp-text p {
+	margin-bottom: 1rem;
+	font-weight: 500;
+	font-size: 1.075rem;
+	font-family: 'Figtree';
+	color: 	#634052;
+}
+
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: rgba(229, 199, 213, 0.5);
+  border-width: 2px;
+	border-style: solid;
+  border-color: rgba(229, 199, 213);
+  border-radius: 0.8rem;
+  color: #634052;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  font-family: 'Figtree';
+  margin-top: 0.2rem;
+}
+
+.link-btn:hover {
+  background: rgba(185, 100, 140, 0.8);
+  transform: translateY(-1px);
+}
+
+/* AWARD SECTIONS */
+.award-section {
+	padding: 70px 60px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	flex-direction: 	column;
+		background: 	#C397A6;
+}
+
+.award-bg {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	display: block;
+	pointer-events: none;
+	z-index: 0;
+}
+
+.award-section > *:not(.award-bg) {
+  position: relative;
+  z-index: 1;
+}
+
+.award-header {
+	margin: 	auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.award-header p {
+	margin-top: 	-1rem;
+	font-family: 'Figtree';
+	font-weight: 500;
+	color: #4C1F44;
+	font-size: 1.4rem;
+}
+
+.award-header span {
+	color: #634052;
+	font-style: 	italic;
+	font-weight: 	600;
+	font-family: 	'Figtree';
+	font-size: 	1rem;
+	margin-bottom: -0.5rem;
+}
+
+.award-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 520px);
+	gap: 2.2rem;
+	justify-content: center;
+	align-items: center;
+	margin-top: 	2rem;
+}
+
+.award-card {
+	padding: 15px 25px 15px;
+	display: flex;
+	flex-direction: column;
+	background: white;
+	box-shadow: 0 10px 25px #E4D8D8;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+.award-content {
+	order: 2;
+	display: flex;
+	flex-direction: 	column;
+	gap: 2rem;
+		width: 100%;
+}
+
+.award-text .bar {
+	order: 	2;
+	height: 2px;
+	width: 30%;
+	background: #833967;
+	margin-top: 1rem;
+	margin-bottom: 10px;
+}
+
+.award-title {
+	order: 	1;
+	font-size: 1.8rem;
+	font-weight: 600;
+	margin-bottom: 0.5rem;
+}
+
+.award-preview {
+	order: 	0;
+	margin-top: 	1rem;
+  flex-shrink: 0;
+  width: 100%;
+  height: 16rem;
+  border-radius: 14px;
+}
+
+.award-preview img {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+#cr {
+	 object-position: 50% 10%;
+}
+
+.award-text {
+	margin-top: 	-2rem;
+}
+
+.award-text h3 {
+	font-weight: 	1000;
+	font-size: 	1.6rem;
+	font-family: 'Figtree';
+	margin-bottom: -4px;
+	color: 	#4C1F44;
+}

@@ -831,18 +831,18 @@ body {
   transform: translateY(-1px);
 }
 
-/* EC SECTION */
-.ec-section {
+/* EDUCATION SECTION */
+.ed-section {
+	display: flex;
 	position: relative;
 	overflow: hidden;
 	padding: 60px 20px;
-	height: 100vh;
-
+	flex-direction: column;
 	margin: 0 auto;
 	background: 	#DFB9CA;
 }
 
-.ec-bg {
+.ed-bg {
 	position: absolute;
 	margin: 0;
 	padding: 0;
@@ -855,7 +855,7 @@ body {
 	z-index: 0;
 }
 
-.ec-header {
+.ed-header {
 	margin: 	auto;
 	display: flex;
 	justify-content: center;
@@ -863,7 +863,7 @@ body {
 	flex-direction: column;
 }
 
-.ec-header p {
+.ed-header p {
 	margin-top: 	-1rem;
 	font-family: 'Figtree';
 	font-weight: 500;
@@ -871,7 +871,7 @@ body {
 	font-size: 1.4rem;
 }
 
-.ec-header span {
+.ed-header span {
 	color: #634052;
 	font-style: 	italic;
 	font-weight: 	600;
@@ -879,17 +879,17 @@ body {
 	font-size: 	1rem;
 }
 
-.ec-section > *:not(.ec-bg) {
+.ed-section > *:not(.ed-bg) {
   position: relative;
   z-index: 1;
 }
 
 
-.ec-year {
+.ed-year {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	gap: 0.5rem;
+	gap: 0.8rem;
 	padding-top: 0.3rem;
 	font-size: 1.1rem;
 	text-transform: 	uppercase	;
@@ -898,63 +898,88 @@ body {
 	color: #634052;
 }
 
-
-
-/* BOUNCE CARDS */
-.bounceCardsContainer {
-  position: absolute;
-  display: flex;
-  min-height: 270px;
-  justify-content: center;
-  align-items: center;
-  width: min(1100px, 95%);
-  margin: 0 auto;
-  padding: 40px 0;
+.bar2 {
+	height: 4px;
+	width: 30%;
+	margin-bottom: 4rem;
+	background: #eee1f5;
+	border-radius: 10px;
+	margin: 10px 0.8rem;
+	margin-left: 0.2rem;
 }
 
-.card {
-	top: 120px;
-  position: absolute;
-  height: 275px;
-  aspect-ratio: 4 / 3;
-  border: 5px solid #fff;
-  border-radius: 25px;
-  overflow: hidden;
-  box-shadow:  0 10px 25px #E4D8D8;
-  transform-origin: center;
-  will-change: transform;
-  cursor: pointer;
-  background: #fff;
+.bar2-over {
+	height: 100%;
+	background: linear-gradient(90deg, #4C1F44, #B35681);
+	border-radius: 10px;
 }
 
-.card .image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display:block;
+.ed-grid {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	grid-template-columns: repeat(2, minmax(0,650px));
+	gap: 2rem;
+	margin-top: 	2rem;
 }
 
-.card-caption {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%) translateY(6px);
-	bottom: 16px;
-	padding: 8px 12px;
-	font-size: 1.3rem;
-	pointer-events: none;
-	font-family: "Figtree";
+.ed-card {
+	display: 	flex;
+	flex-direction: 	column;
+	overflow: 	hidden;
+	background: white;
+	padding: 30px 20px 30px;
+	box-shadow: 0 10px 25px #E4D8D8;
+	border-radius: 25px;
+}
 
-	background: rgba(0,0,0,0.65);
-  color: #fff;
-  padding: 12px 12px;
-  border-radius: 10px;
-  font-weight: 900;
-  text-transform: uppercase;
-  line-height: 1;
-  pointer-events: none;
-  white-space: nowrap;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
-	opacity: 0;
+.school-header {
+	display: flex;
+	gap: 22px;
+	align-items: center;
+}
+
+.school-text h3 {
+	font-weight: 	1000;
+	font-size: 	1.8rem;
+	font-family: 'Figtree';
+	margin-bottom: -4px;
+	color: 	#4C1F44;
+}
+
+.school-text p {
+	font-weight: 800;
+	font-size: 1.2rem;
+	color: 	#634052;
+	margin-bottom: 2rem;
+	font-family: 'Figtree';
+}
+
+#emp {
+	font-weight: 400;
+	font-size: 1.1rem;
+	font-style: italic;
+	color: 	#634052;
+	margin-top: -1.6rem;
+	margin-bottom: 1.5rem;
+	font-family: 'Figtree';
+}
+
+.grad-year {
+	font-weight: 800;
+	font-size: 1.1rem;
+	color: 	#634052;
+	margin-bottom: 2rem;
+	margin-top: 1.5rem;
+	font-family: 'Figtree';
+}
+
+
+#icon3img {
+	width: 	8.5rem;
+	height:	8.5rem;
+	margin-left: 0.8rem;
+
 }
 
 /* PS SECTION */
