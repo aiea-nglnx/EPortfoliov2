@@ -156,7 +156,7 @@ body {
 
 /* ABOUT SECTION */
 .about-section {
-	padding: 80px 20px 60px;
+	padding: 80px 20px 80px;
 	margin: 0 auto;
 	position: relative;
 	overflow: hidden;
@@ -476,7 +476,9 @@ position: 	relative	;
 }
 */
 
-/* Collapsible body */
+
+
+/* Collapsible body
 .item-body {
   max-height: 0;
   overflow: hidden;
@@ -490,18 +492,19 @@ position: 	relative	;
 }
 
 .item.open .item-body {
-  max-height: 200px; /* just needs to be larger than expected content */
+  max-height: 200px;
   opacity: 1;
 }
 
 .item.open .item-arrow {
   transform: rotate(180deg);
 }
+*/
 
 /* ACHIEVEMENTS SECTION */
 .ach-section {
 	min-height: 100vh;
-	padding: 60px 15px;
+	padding: 80px 15px 100px;
 	margin-left: 20px;
 	margin-right: 20px;
 	display: flex;
@@ -615,6 +618,10 @@ position: 	relative	;
 
 .carousel-item img#induction1, #induction1 {
 	object-position: 50% 20%;
+}
+
+.carousel-item img#ls1, #ls1 {
+	object-position: 10%;
 }
 
 #ld-pills {

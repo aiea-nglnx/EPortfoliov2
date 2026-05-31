@@ -90,7 +90,7 @@ body {
 .hs-section {
   position: relative;
   z-index: 2;
-	height: 100vh;
+	height: 75vh;
 	display: flex;
 	align-items: 	center;
 	justify-content: center;
@@ -117,6 +117,261 @@ body {
   left: 0;
   z-index: 1;
 }
+
+/* SNAPSHOT */
+.snapshot {
+		padding: 70px 60px 70px;
+
+		height: 100vh;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	flex-direction: 	column;
+}
+
+.snap-bg {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	display: block;
+	pointer-events: none;
+	z-index: 0;
+}
+
+.snap-inner {
+	position: relative;
+	z-index: 1;
+	padding: 70px 70px 70px 70px;
+}
+
+.snap-header {
+	margin: 	auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+/* CURVE TEXT */
+.curveText {
+		font-family: 	'BBH Hegarty';
+		text-transform: 	uppercase;
+		word-spacing: 4px;
+		font-size: 	2rem;
+		font-weight: 	800;
+		position: absolute;
+		 top: -5%;
+  right: -12%;
+  transform: rotate(70deg) translateY(-50%);
+  overflow: visible;
+  z-index: 1;
+  pointer-events: none;
+
+
+}
+
+textPath {
+	fill: #563848;
+}
+
+.typing-container{
+	place-items: center;
+}
+
+.typing-text {
+	font-family: 'Figtree';
+	white-space: nowrap;
+	overflow: hidden;
+	border-right: 3px solid #4C1F44; /*Blinking*/
+	width: 0;
+
+	/* Sync step count to the exact number of characters*/
+	animation:
+		typing 6s steps(66) infinite alternate,
+		blink 0.7s step-end infinite;
+}
+
+.typing-text #bold {
+	font-weight: 700;
+	color: #4C1F44;
+	font-size: 1.4rem;
+	font-style: normal;
+}
+
+@keyframes typing {
+	0%, 10% { width: 0; }
+	90%, 100% { width: 100%; }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: #000; }
+}
+
+.snap-header p {
+	margin-top: 	-1rem;
+	font-family: 'Figtree';
+	font-weight: 500;
+	color: #4C1F44;
+	font-size: 1.4rem;
+}
+
+.snap-header span {
+	color: #634052;
+	font-style: 	italic;
+	font-weight: 	600;
+	font-family: 	'Figtree';
+	font-size: 	1rem;
+	margin-bottom: -0.5rem;
+}
+
+.snapshot > *:not(.snap-bg) {
+  position: relative;
+  z-index: 1;
+}
+
+.snap-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 4rem;
+	margin-top: 	0.5rem;
+}
+
+.snap-left {
+	flex: 1.2;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.snap-right {
+	flex: 0.8;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	width: 	100%;
+	height: 100%;
+}
+.vinyl-wrap {
+	aspect-ratio: 1 / 1;
+	width: min(100%, 450px);
+	margin-right: 1rem;
+	position: relative;
+}
+
+.vinyl-sticker {
+	object-fit: contain;
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.vinyl-sticker img {
+	position: absolute;
+	aspect-ratio: 1 / 1;
+  left: 4%;
+  bottom: 14px;
+  width: 95px;
+  height: 95px;
+}
+
+
+.vinyl img {
+	object-fit: contain;
+	width: 100%;
+	height: auto;
+	display: block;
+	transform-origin: center;
+	animation: spin 5s linear infinite;
+	border-radius: 	100%;
+	 box-shadow: 0 0 20px #833967, 
+              0 0 30px #833967;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/*SNAPSHOT BOUNCECARD*/
+.snap-bounceCardsContainer {
+  position: absolute;
+  display: flex;
+  min-height: 270px;
+  justify-content: center;
+  align-items: center;
+  width: min(1100px, 95%);
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+#snap-bounceCardsContainer {
+	isolation: isolate;
+  overflow: visible;
+  position: relative;
+}
+
+.snap-card-caption {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%) translateY(6px);
+	bottom: 16px;
+	padding: 8px 12px;
+	font-size: 1.1rem;
+	pointer-events: none;
+	font-family: "Figtree";
+
+	background: rgba(0,0,0,0.65);
+  color: #fff;
+  padding: 12px 12px;
+  border-radius: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+	opacity: 0;
+}
+
+.snapcard {
+	top: 120px;
+  position: absolute;
+  height: 320px;
+  width: 290px;
+  aspect-ratio: 4 / 5;
+  border: 5px solid #fff;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow:  0 10px 25px #E4D8D8;
+  transform-origin: center;
+  will-change: transform;
+  cursor: pointer;
+  background: #fff;
+}
+
+.snapcard.is-active {
+	z-index: 20;
+}
+
+
+.snapcard .image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display:block;
+}
+
+
 
 /* EC SECTION */
 .ec-section {
@@ -202,8 +457,6 @@ body {
   gap: 0.8rem; 
 }
 
-
-
 /* BOUNCE CARDS */
 .bounceCardsContainer {
   position: absolute;
@@ -259,6 +512,66 @@ body {
   white-space: nowrap;
   box-shadow: 0 6px 18px rgba(0,0,0,0.45);
 	opacity: 0;
+}
+
+/* TRANSITION SECTION */
+.quote-section {
+	position: relative;
+  z-index: 2;
+	height: 70vh;
+	display: flex;
+	align-items: 	center;
+	justify-content: center;
+}
+
+#quote-bg {
+	/*OVERLAY */
+	filter: brightness(110%) blur(2px);
+  background-image: 
+  	linear-gradient(
+		  180deg, 
+		  rgba(0,0,0,1) 0%, 
+		  rgba(255,255,255,0) 10%, 
+		  rgba(255,255,255,0) 90%, 
+		  rgba(0,0,0,1) 100%
+  	),
+  	url('../Public/pictures/IMG_5656.jpg')
+  	;
+  background-size: cover;
+  object-position: 50% 100%;
+  background-position: 	center;
+  width: 100%;
+  height: 100%;
+  position: 	absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.quote {
+	display: block;
+	text-align: center;
+	position: relative;
+	margin: 	auto 0;
+	margin-left: 	0;
+	margin-right: 0;
+	top: 0;
+  	font-family: "Figtree";
+	font-weight: 700;
+	width: 80vw;
+	z-index: 	3;
+	color: #F7F5ED;
+}
+
+#trans {
+	color: #F7F5ED;
+	font-size: 1.1rem;
+}
+
+#trans h4 {
+	color: #F7F5ED;
+	font-weight: 400;
+	font-style: italic;
 }
 
 /* COMPETITIONS SECTION */

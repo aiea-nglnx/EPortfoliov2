@@ -55,8 +55,58 @@
 		</section>
 	</main>
 
-	<!-- GALLERY -->
-	<section>
+		<!-- SNAPSHOT -->
+	<section class="snapshot">
+		<svg class="snap-bg" width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="5%" stop-color="#f0d1e0"></stop><stop offset="95%" stop-color="#e4d8d8"></stop></linearGradient></defs><path d="M 0,400 L 0,100 C 169.86666666666667,63.733333333333334 339.73333333333335,27.46666666666667 509,56 C 678.2666666666667,84.53333333333333 846.9333333333334,177.86666666666667 1002,221 C 1157.0666666666666,264.1333333333333 1298.5333333333333,257.06666666666666 1440,250 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="0.53" class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 200)"></path><defs><linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="5%" stop-color="#f0d1e0"></stop><stop offset="95%" stop-color="#e4d8d8"></stop></linearGradient></defs><path d="M 0,400 L 0,233 C 195.33333333333331,209 390.66666666666663,185 559,206 C 727.3333333333334,227 868.6666666666667,293 1011,330 C 1153.3333333333333,367 1296.6666666666665,375 1440,383 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-1" transform="rotate(-180 720 200)"></path></svg>
+		
+		<div class="snap-header">
+			<span class="years">2022-2026</span>
+			<h1 class="title">A Little Snapshot</h1>
+			<div class="typing-anim">
+				<p class="typing-text">404: High school not found... LOADING.. Class of 2026.exe has been compiled successfully.</p>
+			</div>
+
+		</div>
+
+		<div class="snap-inner">
+			<div class="snap-content">
+				<div class="snap-left">
+					<div id="bounce-root">
+					    <div
+					      class="snap-bounceCardsContainer"
+					      id="snap-bounceCardsContainer"
+					      style="position: relative; width: 500px; height: 250px;">
+					      <!-- Cards will be injected here -->
+					    </div>
+					 </div>
+				</div>
+				<div class="snap-right">
+
+					<div class="vinyl-wrap">
+						<div class="vinyl">
+							<img src="Public/pictures/vinyl.png">
+						</div>
+							 	
+
+						<div class="vinyl-sticker">
+							<img src="Public/pictures/sticker.png">
+						</div>
+					</div>
+
+
+					<svg class="curveText" viewBox="0 0 500 280" width="100%" height="100%">
+						<!-- Define curve path -->
+						<path id="curvePath"  d="M 70 230 A 300 300 0 0 1 430 230" fill="transparent" />
+
+						<text>
+							<textPath href="#curvePath" startOffset="50%" text-anchor="middle">
+								Next Track Loading
+							</textPath>
+						</text>
+					</svg>
+				</div>
+			</div>
+		</div>
 		
 	</section>
 
@@ -82,11 +132,21 @@
 	    <div
 	      class="bounceCardsContainer"
 	      id="bounceCardsContainer"
-	      style="position: relative; width: 500px; height: 250px;">
+	      style="position: relative;">
 	      <!-- Cards will be injected here by scripts/bounceCards.js -->
 	    </div>
 	  </div>
   </section>
+
+ 	 <!-- TRANSITION -->
+ 	 <section class="quote-section">
+		<div id="quote-bg"></div>
+		<div class="quote" id="trans">	
+			<h1>“Got no ties left to yesterday. Looking at the future, it’s so bright.”</h1>
+			<h4>—Queen of Hearts by Twice</h4>
+		</div>
+		
+	</section>
 
 	<!-- COMPETITIONS-->
 	<section class="comp-sect">	
@@ -337,4 +397,177 @@
 		</div>
 	</section>
 </body>
+<script>
+	// BOUNCE CARDS
+
+	(() => {
+  const images = [
+  	"Public/pictures/IMG_5096.jpg",
+  	"Public/pictures/IMG_4410.jpg",
+    "Public/pictures/lcc.jpg",
+    "Public/pictures/mjdash.png",
+    "Public/pictures/laumaia.jpg"
+  ];
+
+  const titles = ["Sea Glider", "8th Grade Orientation", "LCC Commencement", "Mapping Justice", "Lau Mai'a Scholar"];
+
+  const containerWidth = 600;
+  const containerHeight = 300;
+  const animationDelay = 1;
+  const animationStagger = 0.08;
+  const easeType = "elastic.out(1, 0.2)";
+  const transformStyles = [
+    "rotate(4deg) translate(10px, -160px)",
+    "rotate(8deg) translate(-150px, -90px)",
+    "rotate(-5deg) translate(-120px, -90px)",
+    "rotate(6deg) translate(180px, -90px)",
+    "rotate(3deg) translate(-50px, 10px)"
+    
+  ];
+  const enableHover = true;
+
+  const root = document.getElementById("snap-bounceCardsContainer");
+  if (!root) return;
+
+  if (containerWidth) root.style.width = `${containerWidth}px`;
+  if (containerHeight) root.style.height = `${containerHeight}px`;
+
+  root.innerHTML = "";
+
+  images.forEach((src, idx) => {
+    const el = document.createElement("div");
+    el.className = `snapcard snapcard-${idx}`;
+    el.dataset.index = String(idx);
+    el.style.transform = transformStyles[idx] ?? "";
+
+    const img = document.createElement("img");
+    img.className = "image";
+    img.src = src;
+    img.alt = `snapcard-${idx}`;
+
+    const caption = document.createElement("div");
+    caption.className = "snap-card-caption";
+    caption.textContent = titles[idx] || "";
+
+    el.appendChild(img);
+    el.appendChild(caption);
+    root.appendChild(el);
+  });
+
+  const getNoRotationTransform = (transformStr) => {
+    const hasRotate = /rotate\([\s\S]*?\)/.test(transformStr);
+    if (hasRotate) return transformStr.replace(/rotate\([\s\S]*?\)/, "rotate(0deg)");
+    if (transformStr === "none" || !transformStr) return "rotate(0deg)";
+    return `${transformStr} rotate(0deg)`;
+  };
+
+  const getPushedTransform = (baseTransform, offsetX) => {
+    const translateRegex = /translate\(\s*([-0-9.]+)px\s*\)/;
+    const match = baseTransform.match(translateRegex);
+    if (match) {
+      const currentX = parseFloat(match[1]);
+      const newX = currentX + offsetX;
+      return baseTransform.replace(translateRegex, `translate(${newX}px)`);
+    }
+    if (!baseTransform || baseTransform === "none") return `translate(${offsetX}px)`;
+    return `${baseTransform} translate(${offsetX}px)`;
+  };
+
+  function pushSiblings(hoveredIdx) {
+    if (!enableHover) return;
+
+    images.forEach((_, i) => {
+      const card = root.querySelector(`.snapcard-${i}`);
+      const cap = root.querySelector(`.snapcard-${i} .snap-card-caption`);
+      if (!card) return;
+
+      card.classList.toggle('is-active', i === hoveredIdx);
+
+      gsap.killTweensOf(card);
+
+      const baseTransform = transformStyles[i] || "none";
+
+      if (i === hoveredIdx) {
+        gsap.to(card, {
+          transform: getNoRotationTransform(baseTransform),
+          scale: 1.12,
+          y: -10,
+          duration: 0.4,
+          ease: "back.out(1.4)",
+          overwrite: "auto"
+        });
+
+        if (cap) {
+          gsap.killTweensOf(cap);
+          gsap.to(cap, { duration: 0.22, autoAlpha: 1, y: 0, ease: "power2.out", overwrite: "auto" });
+          cap.setAttribute("aria-hidden", "false");
+        }
+      } else {
+        const offsetX = i < hoveredIdx ? -100 : 100;
+        const pushedTransform = getPushedTransform(baseTransform, offsetX);
+        const delay = Math.abs(hoveredIdx - i) * 0.05;
+
+        gsap.to(card, {
+          transform: pushedTransform,
+          duration: 0.4,
+          ease: "back.out(1.4)",
+          delay,
+          overwrite: "auto"
+        });
+
+        if (cap) {
+          gsap.killTweensOf(cap);
+          gsap.to(cap, { duration: 0.18, autoAlpha: 0, y: 6, ease: "power2.in", overwrite: "auto" });
+          cap.setAttribute("aria-hidden", "true");
+        }
+      }
+    });
+  }
+
+  function resetSiblings() {
+    if (!enableHover) return;
+
+    images.forEach((_, i) => {
+      const card = root.querySelector(`.snapcard-${i}`);
+      const cap = root.querySelector(`.snapcard-${i} .snap-card-caption`);
+      if (!card) return;
+
+      gsap.killTweensOf(card);
+      gsap.to(card, {
+        transform: transformStyles[i] || "none",
+        scale: 1,
+        duration: 0.4,
+        ease: "back.out(1.4)",
+        overwrite: "auto"
+      });
+
+      if (cap) {
+        gsap.killTweensOf(cap);
+        gsap.to(cap, { duration: 0.18, autoAlpha: 0, y: 6, ease: "power2.in", overwrite: "auto" });
+        cap.setAttribute("aria-hidden", "true");
+      }
+    });
+  }
+
+  const cardEls = Array.from(root.querySelectorAll(".snapcard"));
+  gsap.fromTo(cardEls, { scale: 0 }, { scale: 1, stagger: animationStagger, ease: easeType, delay: animationDelay });
+
+  const captionEls = Array.from(root.querySelectorAll(".snap-card-caption"));
+  gsap.set(captionEls, { autoAlpha: 0, y: 6 });
+  captionEls.forEach((c) => c.setAttribute("aria-hidden", "true"));
+
+  cardEls.forEach((cardEl, idx) => {
+    cardEl.addEventListener("mouseenter", () => pushSiblings(idx));
+    cardEl.addEventListener("mouseleave", resetSiblings);
+    cardEl.addEventListener("focus", () => pushSiblings(idx), true);
+    cardEl.addEventListener("blur", resetSiblings, true);
+    cardEl.addEventListener("touchstart", () => pushSiblings(idx), { passive: true });
+  });
+
+  root.addEventListener("mouseleave", resetSiblings);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") resetSiblings();
+  });
+})();
+</script>
 </html>
