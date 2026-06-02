@@ -145,7 +145,7 @@ body {
 .snap-inner {
 	position: relative;
 	z-index: 1;
-	padding: 70px 70px 70px 70px;
+	padding: 75px 70px 75px;
 }
 
 .snap-header {
@@ -213,6 +213,20 @@ textPath {
 	font-size: 1.4rem;
 }
 
+.indicator {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	padding-top: 0.3rem;
+	font-size: 1.1rem;
+	text-transform: 	uppercase	;
+	font-family: 'Figtree';
+	font-weight: 700;
+	color: #634052;
+}
+
+
 .snap-header span {
 	color: #634052;
 	font-style: 	italic;
@@ -231,7 +245,7 @@ textPath {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 4rem;
+	gap: 5rem;
 	margin-top: 	0.5rem;
 }
 
@@ -267,10 +281,21 @@ textPath {
 .vinyl-sticker img {
 	position: absolute;
 	aspect-ratio: 1 / 1;
-  left: 4%;
-  bottom: 14px;
-  width: 120px;
-  height: 100px;
+}
+
+.vinyl-sticker #lip {
+	  left: 2%;
+  bottom: 10px;
+  width: 125px;
+  height: 105px;
+}
+
+.vinyl-sticker #lion {
+	  right: 22%;
+	  rotate: 9deg;
+  bottom: 90%;
+  width: 165px;
+  height: 165px;
 }
 
 
@@ -431,6 +456,12 @@ textPath {
 	font-family: 'Figtree';
 	font-weight: 700;
 	color: #634052;
+}
+
+#indicator-pill {
+	background-color: rgba(131, 57, 103, 0.5);
+	color: #F3EEE8;
+	border-color: #90647B;
 }
 
 .pill {

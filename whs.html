@@ -65,6 +65,10 @@
 			<div class="typing-anim">
 				<p class="typing-text">LOADING... Class of 2026.exe has been compiled successfully.</p>
 			</div>
+
+			<div class="indicator">
+				<div class="pill" id="indicator-pill">Immortal Lions ≽^- ˕ -^≼</div>	
+			</div>
 		</div>
 
 		<div class="snap-inner">
@@ -88,7 +92,8 @@
 							 	
 
 						<div class="vinyl-sticker">
-							<img src="Public/pictures/sticker.png">
+							<img id="lip" src="Public/pictures/sticker.png">
+							<img id="lion" src="Public/pictures/lionsticker.png">
 						</div>
 					</div>
 
@@ -405,10 +410,11 @@
   	"Public/pictures/IMG_4410.JPG",
     "Public/pictures/lcc.jpg",
     "Public/pictures/mjdash.png",
+    "Public/pictures/hoco.jpg",
     "Public/pictures/laumaia.jpg"
   ];
 
-  const titles = ["Sea Glider", "8th Grade Orientation", "LCC Commencement", "Mapping Justice", "Lau Mai'a Scholar"];
+  const titles = ["Sea Glider", "8th Grade Orientation", "LCC Commencement", "Mapping Justice", "Homecoming", "Lau Mai'a Scholar"];
 
   const containerWidth = 600;
   const containerHeight = 300;
@@ -419,7 +425,8 @@
     "rotate(4deg) translate(10px, -160px)",
     "rotate(8deg) translate(-150px, -90px)",
     "rotate(-5deg) translate(-120px, -90px)",
-    "rotate(6deg) translate(180px, -90px)",
+    "rotate(-8deg) translate(240px, -80px)",
+    "rotate(5deg) translate(200px, -80px)",
     "rotate(3deg) translate(-50px, 10px)"
     
   ];
@@ -502,7 +509,7 @@
           cap.setAttribute("aria-hidden", "false");
         }
       } else {
-        const offsetX = i < hoveredIdx ? -100 : 100;
+        const offsetX = i < hoveredIdx ? -115 : 70;
         const pushedTransform = getPushedTransform(baseTransform, offsetX);
         const delay = Math.abs(hoveredIdx - i) * 0.05;
 
