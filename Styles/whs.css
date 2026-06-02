@@ -191,15 +191,8 @@ textPath {
 
 	/* Sync step count to the exact number of characters*/
 	animation:
-		typing 6s steps(66) infinite alternate,
-		blink 0.7s step-end infinite;
-}
-
-.typing-text #bold {
-	font-weight: 700;
-	color: #4C1F44;
-	font-size: 1.4rem;
-	font-style: normal;
+		typing 6s steps(60) infinite alternate,
+		blink 0.4s step-end infinite;
 }
 
 @keyframes typing {
@@ -213,7 +206,7 @@ textPath {
 }
 
 .snap-header p {
-	margin-top: 	-1rem;
+	margin-top: 	-0.5rem;
 	font-family: 'Figtree';
 	font-weight: 500;
 	color: #4C1F44;
@@ -276,8 +269,8 @@ textPath {
 	aspect-ratio: 1 / 1;
   left: 4%;
   bottom: 14px;
-  width: 95px;
-  height: 95px;
+  width: 120px;
+  height: 100px;
 }
 
 
@@ -518,7 +511,7 @@ textPath {
 .quote-section {
 	position: relative;
   z-index: 2;
-	height: 70vh;
+	height: 60vh;
 	display: flex;
 	align-items: 	center;
 	justify-content: center;
@@ -526,14 +519,14 @@ textPath {
 
 #quote-bg {
 	/*OVERLAY */
-	filter: brightness(110%) blur(2px);
+	filter: brightness(110%) blur(1px);
   background-image: 
   	linear-gradient(
 		  180deg, 
-		  rgba(0,0,0,1) 0%, 
+		  #594A4A 0%, 
 		  rgba(255,255,255,0) 10%, 
 		  rgba(255,255,255,0) 90%, 
-		  rgba(0,0,0,1) 100%
+		  #594A4A 100%
   	),
   	url('../Public/pictures/IMG_5656.JPG')
   	;
@@ -566,12 +559,15 @@ textPath {
 #trans {
 	color: #F7F5ED;
 	font-size: 1.1rem;
+	text-shadow: 2px 4px 5px #4E4141;
 }
 
 #trans h4 {
 	color: #F7F5ED;
 	font-weight: 400;
 	font-style: italic;
+	font-size: 1.2rem;
+	text-shadow: 2px 4px 5px #4E4141;
 }
 
 /* COMPETITIONS SECTION */
