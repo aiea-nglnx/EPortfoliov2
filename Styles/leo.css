@@ -697,13 +697,13 @@ body {
 
 #trans {
 	color: #F7F5ED;
-	font-size: 1rem;
+	font-size: 1.1rem;
 	text-shadow: 	2px 4px 5px #563848;
 }
 
 #trans h4 {
 	color: #F7F5ED;
-	font-weight: 500;
+	font-weight: 400;
 	font-style: italic;
 	font-size: 1.3rem;
 	text-shadow: 	2px 4px 3px #563848;
@@ -714,7 +714,7 @@ body {
 /* FOCUS & HIGHLIGHT */
 
 .role2 {
-	padding: 60px 15px;
+	padding: 20px 15px 50px;
 	position: relative;
 	overflow: hidden;
 	flex-direction: column;
