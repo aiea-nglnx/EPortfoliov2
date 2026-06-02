@@ -134,8 +134,14 @@
 		</div>
 
 		<div class="role" id="container">
-			<div id="circular-gallery" class="circular-gallery"></div>
-			<script src="./Scripts/gallery.js" defer></script>
+			<div id="bounce-root">
+			    <div
+			      class="bounceCardsContainer"
+			      id="bounceCardsContainer"
+			      style="position: relative;">
+			      <!-- Cards will be injected here by scripts/bounceCards.js -->
+			    </div>
+		    </div>
 		</div>		
 
 		<!-- TIMELINE BULLETS -->
@@ -163,6 +169,16 @@
 			    </div>
 			</div>		
 	</section>
+	<!-- -->
+	<section class="transition">
+		<div id="trans-bg"></div>
+		<div class="quotetrans" id="trans">	
+			<h1>"Raise a glass to the past in the story of us."</h1>
+			<h4>Raise y_our glass by Huh Yunjin (Lesserafim)</h4>
+		</div>
+	</section>
+
+	<!-- -->
 	<section class="role2">
 		<div class="fh-grid">
 			<div class="focus" id="fh">
@@ -344,4 +360,192 @@
 			</div>
 	</section>
 </body>
+
+<script>
+	// BOUNCE CARDS
+
+	(() => {
+	  const images = [
+	    "Public/pictures/sophleo2nd.png",
+	    'Public/pictures/sophleo3rd.png',
+	    'Public/pictures/sophleo1st.png',
+	    'Public/pictures/juniorleo1st.png',
+	    'Public/pictures/bg3.jpg',  
+	    'Public/pictures/seniorleoclubrush.png',
+	    'Public/pictures/seniorleo2nd.png'
+	  ];
+
+	  // Titles/captions
+	  const titles = [
+	    'Breast Cancer Walk',
+	    'Christmas Cards',
+	    'Homeless Keiki',
+	    "Loko I'a Pa'aiau",
+	    "Loko I'a Pa'aiau",
+	    "Club Rush",
+	    "Waipahu Lo'i Service"
+	  ];
+
+	  const containerWidth = 600; // px
+	  const containerHeight = 300; // px
+
+	  const animationDelay = 1; // seconds
+	  const animationStagger = 0.08; // seconds
+	  const easeType = 'elastic.out(1, 0.3)'; // GSAP ease string
+	  const transformStyles = [
+	    'rotate(-6deg) translate(-200px)',
+	    'rotate(5deg) translate(-150px)',
+	    'rotate(-3deg) translate(-70px)',
+	    'rotate(12deg) translate(70px)',
+	    'rotate(6deg) translate(150px)',
+	    'rotate(-5deg) translate(260px)',
+	    'rotate(3deg) translate(320px)'
+	  ];
+	   const enableHover = true;
+
+	  const root = document.getElementById("bounceCardsContainer");
+	  if (!root) return;
+
+	  if (containerWidth) root.style.width = `${containerWidth}px`;
+	  if (containerHeight) root.style.height = `${containerHeight}px`;
+
+	  root.innerHTML = "";
+
+	  images.forEach((src, idx) => {
+	    const el = document.createElement("div");
+	    el.className = `card card-${idx}`;
+	    el.dataset.index = String(idx);
+	    el.style.transform = transformStyles[idx] ?? "";
+
+	    const img = document.createElement("img");
+	    img.className = "image";
+	    img.src = src;
+	    img.alt = `card-${idx}`;
+
+	    const caption = document.createElement("div");
+	    caption.className = "card-caption";
+	    caption.textContent = titles[idx] || "";
+
+	    el.appendChild(img);
+	    el.appendChild(caption);
+	    root.appendChild(el);
+	  });
+
+	  const getNoRotationTransform = (transformStr) => {
+	    const hasRotate = /rotate\([\s\S]*?\)/.test(transformStr);
+	    if (hasRotate) return transformStr.replace(/rotate\([\s\S]*?\)/, "rotate(0deg)");
+	    if (transformStr === "none" || !transformStr) return "rotate(0deg)";
+	    return `${transformStr} rotate(0deg)`;
+	  };
+
+	  const getPushedTransform = (baseTransform, offsetX) => {
+	    const translateRegex = /translate\(\s*([-0-9.]+)px\s*\)/;
+	    const match = baseTransform.match(translateRegex);
+	    if (match) {
+	      const currentX = parseFloat(match[1]);
+	      const newX = currentX + offsetX;
+	      return baseTransform.replace(translateRegex, `translate(${newX}px)`);
+	    }
+	    if (!baseTransform || baseTransform === "none") return `translate(${offsetX}px)`;
+	    return `${baseTransform} translate(${offsetX}px)`;
+	  };
+
+	  function pushSiblings(hoveredIdx) {
+	    if (!enableHover) return;
+
+	    images.forEach((_, i) => {
+	      const card = root.querySelector(`.card-${i}`);
+	      const cap = root.querySelector(`.card-${i} .card-caption`);
+	      if (!card) return;
+
+	      card.classList.toggle('is-active', i === hoveredIdx);
+
+	      gsap.killTweensOf(card);
+
+	      const baseTransform = transformStyles[i] || "none";
+
+	      if (i === hoveredIdx) {
+	        gsap.to(card, {
+	          transform: getNoRotationTransform(baseTransform),
+	          scale: 1.12,
+	          y: -10,
+	          duration: 0.4,
+	          ease: "back.out(1.4)",
+	          overwrite: "auto"
+	        });
+
+	        if (cap) {
+	          gsap.killTweensOf(cap);
+	          gsap.to(cap, { duration: 0.22, autoAlpha: 1, y: 0, ease: "power2.out", overwrite: "auto" });
+	          cap.setAttribute("aria-hidden", "false");
+	        }
+	      } else {
+	        const offsetX = i < hoveredIdx ? -120 : 120;
+	        const pushedTransform = getPushedTransform(baseTransform, offsetX);
+	        const delay = Math.abs(hoveredIdx - i) * 0.05;
+
+	        gsap.to(card, {
+	          transform: pushedTransform,
+	          duration: 0.4,
+	          ease: "back.out(1.4)",
+	          delay,
+	          overwrite: "auto"
+	        });
+
+	        if (cap) {
+	          gsap.killTweensOf(cap);
+	          gsap.to(cap, { duration: 0.18, autoAlpha: 0, y: 6, ease: "power2.in", overwrite: "auto" });
+	          cap.setAttribute("aria-hidden", "true");
+	        }
+	      }
+	    });
+	  }
+
+	  function resetSiblings() {
+	    if (!enableHover) return;
+
+	    images.forEach((_, i) => {
+	      const card = root.querySelector(`.card-${i}`);
+	      const cap = root.querySelector(`.card-${i} .card-caption`);
+	      if (!card) return;
+
+	      gsap.killTweensOf(card);
+	      gsap.to(card, {
+	        transform: transformStyles[i] || "none",
+	        scale: 1,
+	        duration: 0.4,
+	        ease: "back.out(1.4)",
+	        overwrite: "auto"
+	      });
+
+	      if (cap) {
+	        gsap.killTweensOf(cap);
+	        gsap.to(cap, { duration: 0.18, autoAlpha: 0, y: 6, ease: "power2.in", overwrite: "auto" });
+	        cap.setAttribute("aria-hidden", "true");
+	      }
+	    });
+	  }
+
+	  const cardEls = Array.from(root.querySelectorAll(".card"));
+	  gsap.fromTo(cardEls, { scale: 0 }, { scale: 1, stagger: animationStagger, ease: easeType, delay: animationDelay });
+
+	  const captionEls = Array.from(root.querySelectorAll(".card-caption"));
+	  gsap.set(captionEls, { autoAlpha: 0, y: 6 });
+	  captionEls.forEach((c) => c.setAttribute("aria-hidden", "true"));
+
+	  cardEls.forEach((cardEl, idx) => {
+	    cardEl.addEventListener("mouseenter", () => pushSiblings(idx));
+	    cardEl.addEventListener("mouseleave", resetSiblings);
+	    cardEl.addEventListener("focus", () => pushSiblings(idx), true);
+	    cardEl.addEventListener("blur", resetSiblings, true);
+	    cardEl.addEventListener("touchstart", () => pushSiblings(idx), { passive: true });
+	  });
+
+	  root.addEventListener("mouseleave", resetSiblings);
+	  document.addEventListener("keydown", (e) => {
+	    if (e.key === "Escape") resetSiblings();
+	  });
+	})();
+</script>
+
 </html>

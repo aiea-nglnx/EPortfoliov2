@@ -90,7 +90,7 @@ body {
 .leo-opening {
 	position: relative;
   z-index: 2;
-	height: 100vh;
+	height: 75vh;
 	display: flex;
 	align-items: 	center;
 	justify-content: center;
@@ -135,7 +135,7 @@ body {
 
 .quote h1 {
 	font-weight: 	800;
-	font-size: 2.4rem;
+	font-size: 2.2rem;
 }
 
 .quote h4 {
@@ -156,7 +156,7 @@ body {
 
 .quote-section	h2 {
 	margin-top: 20px;
-	font-size: 	2.4rem;
+	font-size: 	2.2rem;
 	font-weight: 800;
 }
 
@@ -444,12 +444,10 @@ body {
 
 /* ROLE SECTION */
 .role-section {
-	display: flex;
-	overflow: hidden;
-	margin: 0 auto;
 	position: relative;
 	overflow: hidden;
-	padding: 70px 60px;
+	padding: 60px 20px;
+	margin: 0 auto;
 	flex-direction: column;
 	background: 	#C397A6;
 }
@@ -508,85 +506,73 @@ body {
 	margin-bottom: -0.5rem;
 }
 
-#container {
-	margin-top: 	4rem;
-  width: 100%;
-  height: fit-content;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: repeat(1, minmax(0, 1fr));
-  grid-auto-flow: column;
-  gap: 2.5rem;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  position: relative;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-
+/*BOUNCECARDS */
+.bounceCardsContainer {
+  position: absolute;
+  display: flex;
+  min-height: 270px;
+  justify-content: center;
+  align-items: center;
+  width: min(1100px, 95%);
+  margin: 0 auto;
+  padding: 40px 0;
 }
 
-.leo-photo {
-  width: 	35vw;
-  height: 25vw;
-  display: block;
-  object-fit: cover;
-  border-radius: 16px; /* optional, just for style */
-}
-
-#intro {
-	margin-left: 5.5rem;
-}
-
-#text-container {
-  position: relative;
-}
-
-#text-container p {
-	color: #563848;
-	font-weight: 	500;
-}
-
-
-.role-text {
-	font-family: 'Figtree';
-	font-weight: 	400;
-	font-size: 1.6rem;
-	line-height: 	1;
-	margin-left: 5.5rem;
-	width: 	50vw;
-	height: 10vh;
+#bounceCardsContainer	{
+	isolation: isolate;
+	overflow: visible;
 	position: relative;
 }
 
-.role-text	p {
-	width: 	40vw;
+.card {
+	top: 120px;
+	margin-left: 	-5rem;
+  position: absolute;
+  height: 282px;
+  aspect-ratio: 4 / 3;
+  border: 5px solid #fff;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow:  0 10px 25px #E4D8D8;
+  transform-origin: center;
+  will-change: transform;
+  cursor: pointer;
+  background: #fff;
 }
 
-.circular-gallery {
+.card.is-active {
+	z-index: 20;
+}
+
+
+.card .image {
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  cursor: grab;
+  object-fit: cover;
+  display:block;
 }
 
-.circular-gallery:active {
-  cursor: grabbing;
-}
+.card-caption {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%) translateY(6px);
+	bottom: 16px;
+	padding: 8px 12px;
+	font-size: 1.1rem;
+	pointer-events: none;
+	font-family: "Figtree";
 
-#text-container	.bar {
-	height: 2px;
-	width: 30%;
-	background-color: #833967;
-	margin-top: 1rem;
-	margin-bottom: 10px;
-	width: 30%;
-  display: 	block;
-	align-items: 	left;
-	align-content: relative;
-	margin-left: -0.1rem;
+	background: rgba(0,0,0,0.65);
+  color: #fff;
+  padding: 12px 12px;
+  border-radius: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+	opacity: 0;
 }
 
 /* TIMELINE */
@@ -597,7 +583,8 @@ body {
 	max-width: 1200px;
 	margin: 0 auto;
 	color: #F7F5ED;
-	margin-top: 	-3rem;
+	margin-top: 	5rem;
+	margin-bottom: 	-1rem;
 }
 
 .timeline::after {
@@ -605,7 +592,7 @@ body {
 	position: absolute;
 	top: 42.5%;
 	left: 0;
-	width: 100%;
+	width: 95%;
 	height: 4px;
 	border-radius: 2px;
 	z-index: 1;
@@ -658,6 +645,71 @@ body {
 	text-transform: uppercase;
 	font-weight: 800;
 }
+
+/* TRANSITION */
+.transition {
+	position: relative;
+  z-index: 2;
+	height: 60vh;
+	display: flex;
+	align-items: 	center;
+	justify-content: center;
+}
+
+#trans-bg {
+	/*OVERLAY */
+	filter: brightness(110%) blur(4px);
+  background-image: 
+  	linear-gradient(
+		  180deg, 
+		  rgba(0,0,0,1) 0%, 
+		  rgba(255,255,255,0) 15%, 
+		  rgba(255,255,255,0) 80%, 
+		  rgba(0,0,0,1) 100%
+  	),
+  	url('../Public/pictures/bg4.png')
+  	;
+  background-size: cover;
+  object-position: 50% 100%;
+  background-position: 	center;
+  width: 100%;
+  height: 100%;
+  position: 	absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.quotetrans {
+	display: block;
+	text-align: center;
+	position: relative;
+	margin: 	auto 0;
+	margin-left: 	0;
+	margin-right: 0;
+	top: 0;
+  	font-family: "Figtree";
+	font-weight: 700;
+	width: 80vw;
+	z-index: 	3;
+	color: #F7F5ED;
+}
+
+#trans {
+	color: #F7F5ED;
+	font-size: 1rem;
+	text-shadow: 	2px 4px 5px #563848;
+}
+
+#trans h4 {
+	color: #F7F5ED;
+	font-weight: 500;
+	font-style: italic;
+	font-size: 1.3rem;
+	text-shadow: 	2px 4px 3px #563848;
+
+}
+
 
 /* FOCUS & HIGHLIGHT */
 
