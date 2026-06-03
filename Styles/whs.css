@@ -886,6 +886,35 @@ textPath {
     margin-top:  20px;
 }
 
+.capstone-links {
+	margin-left: 	5.5rem;
+	margin-top: -2rem;
+	margin-bottom: 	1.5rem;
+}
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: rgba(229, 199, 213, 0.9);
+  border-width: 2px;
+	border-style: solid;
+  border-color: rgba(229, 199, 213);
+  border-radius: 0.8rem;
+  color: #634052;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  font-family: 'Figtree';
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+}
+
+.link-btn:hover {
+  background: rgba(185, 100, 140, 0.8);
+  transform: translateY(-1px);
+}
+
 
 /* AWARD SECTIONS */
 .award-section {
