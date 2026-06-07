@@ -550,7 +550,7 @@ textPath {
 
 #quote-bg {
 	/*OVERLAY */
-	filter: brightness(110%) blur(1px);
+	filter: brightness(110%);
   background-image: 
   	linear-gradient(
 		  180deg, 

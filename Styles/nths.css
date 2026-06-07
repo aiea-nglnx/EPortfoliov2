@@ -425,7 +425,7 @@ position: 	relative	;
 
 #address-bg {
 	/*OVERLAY */
-	filter: brightness(110%) blur(1px);
+	filter: brightness(110%) blur(2px);
   background-image: 
   	linear-gradient(
 		  180deg, 
@@ -465,7 +465,7 @@ position: 	relative	;
 #trans {
 	color: #F7F5ED;
 	font-size: 1.1rem;
-	text-shadow: 	2px 4px 5px #4C1F44;
+	text-shadow: 	2px 3px 3px #4C1F44;
 }
 
 #trans h4 {
@@ -473,7 +473,7 @@ position: 	relative	;
 	font-weight: 400;
 	font-style: italic;
 	font-size: 1.2rem;
-	text-shadow: 	2px 4px 3px #4C1F44;
+	text-shadow: 	2px 4px 2px #4C1F44;
 
 }
 
