@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="./Styles/styles.css">
 
     <!-- BOUNCE CARDS -->
-\    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
     <!-- DECRYPTED TEXT -->
     <script src="./Scripts/decrypted.js" defer></script>
@@ -346,6 +346,7 @@
 				        	</p>
 				        	<div class="project-links">
 				        		<a href="https://github.com/aiea-nglnx/FishLine-Futures.git" class="link-btn">View Code</a>
+				        		<a href="https://www.figma.com/design/Mjh0ymv1dPjx3v63bG81dF/CAC-App-Wireframes?node-id=0-1&t=szhuzieF1htwmlff-1" class="link-btn">View Wireframes</a>
 				        	</div>
 				    	</div>
 					</div>
@@ -524,6 +525,23 @@
 		
 	</section>
 
-	
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+		  const images = document.querySelectorAll(".about-photo");
+		  if (!images.length) return;
+
+		  const observer = new IntersectionObserver((entries, obs) => {
+		    entries.forEach((entry) => {
+		      if (entry.isIntersecting) {
+		        entry.target.classList.add("slide-in-right");
+		        entry.target.classList.add("slide-in-left");
+		        obs.unobserve(entry.target);
+		      }
+		    });
+		  }, { threshold: 0.2 });
+
+		  images.forEach((image) => observer.observe(image));
+		});
+	</script>
 </body>
 </html>
