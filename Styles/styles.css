@@ -199,6 +199,7 @@ body {
 	overflow: hidden;
 	border-right: 3px solid #4C1F44; /*Blinking*/
 	width: 0;
+	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
 
 	/* Sync step count to the exact number of characters*/
@@ -1165,9 +1166,220 @@ body {
 }
 
 /* small responsive tweak to avoid overflow on narrow screens */
-@media (max-width: 480px) {
-  .card { width: 140px; }
-  .bounceCardsContainer { width: 320px; height: 220px; }
+/* =========================================================
+   2560 × 1600 MAC OPTIMIZATION
+   Keeps existing desktop design — only scales/adjusts it
+========================================================= */
+
+@media screen and (min-width: 2200px) and (min-height: 1400px) {
+
+	/* =========
+			NAV
+	============ */
+	.bottomMenu {
+		bottom: 60px;
+		padding: 20px 40px;
+		border-radius: 100px;
+		gap: 2.2rem;
+	}
+
+	.bottomMenu a {
+		padding: 8px 15px;
+		font-size: 2.2rem;
+	}
+
+	.nav-logo {
+		height: 90px;
+	}
+
+	.contact-pill {
+		padding: 15px 30px;
+		gap: 15px;
+	}
+
+	.contact-pill a {
+		font-size: 2.5rem;
+	}
+
+	.contact-pill .contact-divider {
+		height: 40px;
+	}
+
+	/* =========================
+	   HERO
+	========================= */
+
+	.name {
+		margin-left: 140px;
+		padding-top: 230px;
+		font-size: 8.7rem;
+	}
+
+	#decrypted-root {
+		padding-left: 140px;
+		padding-top: 	2rem;
+	}
+
+	.all-letters {
+		font-size: 	3.2rem;
+	}
+
+	.tagline {
+		margin-left: 140px;
+		font-size: 3.2rem;
+	}
+
+	#IAM {
+		padding-left: 	10px;
+	}
+
+	.contact-list {
+		margin-left: 140px;
+		gap: 70px;
+	}
+
+	.contact-link {
+		font-size: 5rem;
+	}
+
+	.contact-link img {
+		padding-top: 	10px;
+		height: 4.5rem !important;
+	}
+
+
+	/* =========================
+	   ABOUT
+	========================= */
+
+	.me,
+	.objective,
+	.goal {
+		width: min(90vw, 1600px);
+		gap: 5rem;
+	}
+
+	#text-container {
+		padding-top: 7rem;
+	}
+
+	.me-text,
+	.objective-text,
+	.goal-text {
+		font-size: 1.7rem;
+	}
+
+	.me-text > p,
+	.objective-text > p,
+	.goal-text > p {
+		width: 42vw;
+		max-width: 700px;
+	}
+
+	.about-photo {
+		width: min(36vw, 650px);
+		height: min(36vw, 650px);
+	}
+
+	#me-photo {
+		margin-left: 4rem;
+	}
+
+	#obj-photo {
+		margin-left: 5.5rem;
+	}
+
+	#goal-photo {
+		margin-left: 4rem;
+	}
+
+
+	/* =========================
+	   SKILLS
+	========================= */
+
+	.section-subtitle {
+		margin-left: 7rem;
+		font-size: 1.3rem;
+	}
+
+	.box {
+		margin-right: 7rem;
+		padding-left: 80px;
+		padding-right: 80px;
+	}
+
+	.skill-grid {
+		margin-left: 7rem;
+		grid-template-columns: repeat(2, minmax(0, 650px));
+		gap: 2.5rem;
+	}
+
+	.skill-card {
+		padding: 45px 25px;
+	}
+
+
+	/* =========================
+	   PROJECTS
+	========================= */
+
+	.projects-header {
+		margin-left: 7rem;
+	}
+
+	.projects-row {
+		margin-left: 7rem;
+		grid-template-columns: repeat(2, minmax(0, 700px));
+		gap: 2.5rem;
+	}
+
+	.project-card {
+		padding: 30px 40px;
+	}
+
+	.project-preview {
+		height: 16rem;
+	}
+
+
+	/* =========================
+	   EDUCATION
+	========================= */
+
+	.ed-grid {
+		grid-template-columns: repeat(2, minmax(0, 700px));
+		gap: 2.5rem;
+	}
+
+
+	/* =========================
+	   SKILL LOOP
+	========================= */
+
+	.skills {
+		gap: 8rem;
+	}
+
+	.skills-group {
+		font-size: 3.5rem;
+	}
+
+
+	/* =========================
+	   TRANSITION / QUOTE
+	========================= */
+
+	.qu-section,
+	.ps-section {
+		height: 55vh;
+	}
+
+	.quote {
+		width: 65vw;
+		max-width: 1200px;
+		font-size: 1.1rem;
+	}
 }
 
 
