@@ -1173,6 +1173,10 @@ body {
 
 @media screen and (min-width: 2200px) and (min-height: 1400px) {
 
+	.title {
+		font-size: clamp(3.5rem, 4.9vw, 10rem);
+	}
+
 	/* =========
 			NAV
 	============ */
@@ -1255,30 +1259,35 @@ body {
 	.me,
 	.objective,
 	.goal {
-		width: min(90vw, 1600px);
-		gap: 5rem;
+		width: min(100%, 2000px);
+		box-sizing: 	border-box;
+		gap: 8rem;
 	}
 
 	#text-container {
-		padding-top: 7rem;
+		padding-top: 5.5rem;
 	}
 
-	.me-text,
-	.objective-text,
-	.goal-text {
-		font-size: 1.7rem;
-	}
 
 	.me-text > p,
 	.objective-text > p,
 	.goal-text > p {
-		width: 42vw;
-		max-width: 700px;
+		width: 60vw;
+		max-width: 800px;
+		font-size: clamp(1rem, 1.1vw, 3rem);
+		margin-top: 	1.5rem;
+		line-height: 1.7;
+	}
+
+	.me-text .title,
+	.objective-text .title,
+	.goal-text .title {
+		font-size: clamp(3.5rem, 5vw, 7.5rem);
 	}
 
 	.about-photo {
-		width: min(36vw, 650px);
-		height: min(36vw, 650px);
+		width: min(36vw, 850px);
+		height: min(36vw, 850px);
 	}
 
 	#me-photo {
@@ -1300,25 +1309,82 @@ body {
 
 	.section-subtitle {
 		margin-left: 7rem;
-		font-size: 1.3rem;
+		font-size: 2.5rem;
 	}
 
 	.box {
 		margin-right: 7rem;
-		padding-left: 80px;
-		padding-right: 80px;
+		padding: 40px 90px;
+	}
+	.item {
+		font-size: 1.9rem;
+	}
+
+	.item span {
+		padding: 2rem 2rem;
+	}
+
+	#icon {
+		font-size: 	3.5rem;
 	}
 
 	.skill-grid {
 		margin-left: 7rem;
-		grid-template-columns: repeat(2, minmax(0, 650px));
-		gap: 2.5rem;
+		grid-template-columns: repeat(3, minmax(0, 700px));
+		gap: 3.8rem;
+	}
+
+	.stat-row .one {
+	
+		font-size: 	2rem;
+		margin-bottom: 	0.5rem;
+	}
+
+	.stat-row .emp {
+		
+		font-size: 	1.7rem;
 	}
 
 	.skill-card {
-		padding: 45px 25px;
+		padding: 65px 40px;
 	}
 
+	.skill-icon i {
+		width: 90px;
+		height: 90px;
+	}
+
+	#icon2img {
+		width: 5rem;
+		height: 5rem;
+	}
+
+	#icon2 {
+		font-size: 	4.3rem;
+	}
+	.skill-text	{
+		margin-left: 	1rem;
+	}
+
+	.skill-text h3 {
+		font-size: 3rem;
+	}
+
+	.skill-text p {
+		font-size: 1.9rem;
+	}
+
+	.card-link {
+		font-size: 	1.5rem;
+	}
+
+	#knowledge {
+		font-size: 	4.5rem;
+	}
+
+	.skills {
+		gap: 8rem;
+	}
 
 	/* =========================
 	   PROJECTS
@@ -1326,45 +1392,120 @@ body {
 
 	.projects-header {
 		margin-left: 7rem;
+		margin-top: 	2rem;
+	}
+
+	.projects-header p {
+		font-size: 	2.5rem;
+	}
+
+	.projects-header	span {
+		margin-bottom: 	-1rem;
+		font-size: 	2rem;
 	}
 
 	.projects-row {
 		margin-left: 7rem;
-		grid-template-columns: repeat(2, minmax(0, 700px));
+		grid-template-columns: repeat(3, minmax(0, 730px));
 		gap: 2.5rem;
 	}
 
 	.project-card {
-		padding: 30px 40px;
+		padding: 40px 50px;
 	}
 
 	.project-preview {
-		height: 16rem;
+		height: 20rem;
 	}
 
+	.project-text h3 {
+		font-size: 2rem;
+	}
+
+	.project-text p {
+		font-size: 1.5rem;
+	}
+
+	.project-title span{
+	font-size: 1.2rem;
+}
+
+	.project-info ul {
+		font-size: 1.5rem;
+	}
+
+	.project-tech {
+		font-size: 	1.2rem;
+	}
+
+	.pill {
+		padding: 0.6rem 1rem;
+		border-radius: 2rem;
+	}
+
+	.link-btn {
+		padding: 	1rem 1.7rem;
+		font-size: 1.3rem;
+	}
+
+	#project-iconimg {
+		width: 1.8rem;
+		height: 1.8rem;
+	}
+
+	#project-icon	{
+		font-size: 1.5rem;
+	}
 
 	/* =========================
 	   EDUCATION
 	========================= */
 
 	.ed-grid {
-		grid-template-columns: repeat(2, minmax(0, 700px));
-		gap: 2.5rem;
+		grid-template-columns: repeat(2, minmax(0, 950px));
+		gap: 4rem;
 	}
 
-
-	/* =========================
-	   SKILL LOOP
-	========================= */
-
-	.skills {
-		gap: 8rem;
+	.ed-header	span {
+		margin-bottom: 	-1rem;
+		margin-top: 	2rem;
+		font-size: 	2rem;
 	}
 
-	.skills-group {
-		font-size: 3.5rem;
+	.ed-year {
+		padding-top: 1rem;
+		font-size: 	1.8rem;
 	}
 
+	.ed-card {
+		padding: 40px 52px 40px;
+	}
+
+	#icon3img {
+		width: 	10rem;
+		height: 10rem;
+		margin-right: 	1rem;
+	}
+
+	.school-text	h3 {
+		font-size: 	2.6rem;
+	}
+
+	.school-text	p {
+		font-size: 1.7rem;
+	}
+
+	#emp {
+		font-size: 1.5rem;
+	}
+
+	.typing-anim p {
+		font-size: 	2.2rem;
+	}
+
+	.typing-text #bold {
+		font-size: 	2.2rem;
+	}
 
 	/* =========================
 	   TRANSITION / QUOTE
@@ -1375,10 +1516,21 @@ body {
 		height: 55vh;
 	}
 
+	#trans {
+		font-size: 	1.8rem;
+	}
+
+	#trans h4 {
+		font-size: 2rem;
+	}
+
 	.quote {
-		width: 65vw;
-		max-width: 1200px;
-		font-size: 1.1rem;
+		width: 80vw;
+		max-width: 1700px;
+		font-size: 1.8rem;
+	}
+	.quote h4 {
+		font-size: 	2rem;
 	}
 }
 
@@ -1415,7 +1567,6 @@ body {
 .skills-group {
 	flex: 0 0 auto;
 	padding: 1em;
-	font-size: 3em;
 	border-radius: .2em;
 	text-align: center;
 	align-content: center;
