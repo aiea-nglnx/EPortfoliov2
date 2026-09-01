@@ -1406,8 +1406,8 @@ body {
 
 	.projects-row {
 		margin-left: 7rem;
-		grid-template-columns: repeat(3, minmax(0, 730px));
-		gap: 2.5rem;
+		grid-template-columns: repeat(2, minmax(0, 1000px));
+		gap: 3.5rem;
 	}
 
 	.project-card {
@@ -1419,11 +1419,12 @@ body {
 	}
 
 	.project-text h3 {
-		font-size: 2rem;
+		font-size: 2.5rem;
 	}
 
 	.project-text p {
-		font-size: 1.5rem;
+		font-size: 1.8rem;
+		line-height: 2rem;
 	}
 
 	.project-title span{
@@ -1431,21 +1432,22 @@ body {
 }
 
 	.project-info ul {
-		font-size: 1.5rem;
+		font-size: 1.7rem;
 	}
 
 	.project-tech {
-		font-size: 	1.2rem;
+		font-size: 	1.5rem;
 	}
 
 	.pill {
 		padding: 0.6rem 1rem;
 		border-radius: 2rem;
+		margin-bottom: 	0.5rem;
 	}
 
 	.link-btn {
 		padding: 	1rem 1.7rem;
-		font-size: 1.3rem;
+		font-size: 1.5rem;
 	}
 
 	#project-iconimg {
@@ -1454,7 +1456,7 @@ body {
 	}
 
 	#project-icon	{
-		font-size: 1.5rem;
+		font-size: 1.6rem;
 	}
 
 	/* =========================
@@ -1462,7 +1464,7 @@ body {
 	========================= */
 
 	.ed-grid {
-		grid-template-columns: repeat(2, minmax(0, 950px));
+		grid-template-columns: repeat(2, minmax(0, 1100px));
 		gap: 4rem;
 	}
 
@@ -1473,12 +1475,13 @@ body {
 	}
 
 	.ed-year {
-		padding-top: 1rem;
-		font-size: 	1.8rem;
+		padding-top: 1.2rem;
+		font-size: 	2.2rem;
 	}
 
 	.ed-card {
 		padding: 40px 52px 40px;
+		border-radius: 	50px;
 	}
 
 	#icon3img {
@@ -1488,23 +1491,23 @@ body {
 	}
 
 	.school-text	h3 {
-		font-size: 	2.6rem;
+		font-size: 	3rem;
 	}
 
 	.school-text	p {
-		font-size: 1.7rem;
+		font-size: 2rem;
 	}
 
 	#emp {
-		font-size: 1.5rem;
+		font-size: 2rem;
 	}
 
 	.typing-anim p {
-		font-size: 	2.2rem;
+		font-size: 	2.5rem;
 	}
 
 	.typing-text #bold {
-		font-size: 	2.2rem;
+		font-size: 	2.4rem;
 	}
 
 	/* =========================
