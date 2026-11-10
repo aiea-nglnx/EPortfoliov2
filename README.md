@@ -5,7 +5,7 @@ My electronic portfolio depicted is the second version and the lastest as of 202
 
 
 ## 🎓 Vision for the Future
-I’m working toward a degree in Informatics, and a minor in Data Science at UC Irvine and hopefully earn a master's in Business Administration. I aiming to blend my technical expertise (e.g. in user experience, networking, data) with creativity to enable digital interaction and translate it into practical design solutions through leadership and innovation. My goal is to study at institutions that I got accepted in like:
+I’m working toward a degree in Informatics with a concentration in HCI (Human Computer Interaction), and a minor in either Information & Computer Science or Digital Information Systems at UC Irvine and hopefully earn a master's in Business Administration. I aiming to blend my technical expertise (e.g. in user experience, networking, data) with creativity to enable digital interaction and translate it into practical design solutions through leadership and innovation. My goal is to study at institutions that I got accepted in like:
 
 * University of California, Irvine
 * DePaul University
