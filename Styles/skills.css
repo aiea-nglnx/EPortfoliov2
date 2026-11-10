@@ -692,12 +692,24 @@ margin-bottom: 	2.5rem;
 	justify-content: center;
 }
 
+.ctso-date {
+	color: #634052;
+	font-style: 	italic;
+	font-weight: 	600;
+	font-family: 	'Figtree';
+	font-size: 	1rem;
+	margin-top: 2rem;
+	margin-bottom: -3rem;
+}
+
+
 .ctso-subheading {
 	font-size: 3rem;
 	font-family: 	'BBH Hegarty';
 	text-transform: 	uppercase;
 	letter-spacing: 1px;
 	padding: 2rem;
+	font-weight: 700;
 	color: #682C56;
 }
 

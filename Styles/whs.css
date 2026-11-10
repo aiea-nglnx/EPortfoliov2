@@ -13,7 +13,7 @@ body {
 	font-family: 'BBH Hegarty';
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
-	font-size: 3.5rem;
+	font-size: clamp(3.5rem, 3.9vw, 7rem);
 	color: #4C1F44;
 }
 
