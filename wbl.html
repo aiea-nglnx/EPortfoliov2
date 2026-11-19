@@ -325,62 +325,187 @@
 			<h1 class="title">Internships / Experiences</h1>
 			<p class="subtitle">Featured professional experiences, I was involved in.</p>
 		</div>
+		<div class="intern-toolbar">
+			<div class="intern-filters" role="group" aria-label="Filtr Experiences by Category">
+				<button type="button" class="filter-pill is-active" data-filter="all" aria-pressed="true">All</button>
+				<button type="button" class="filter-pill is-active" data-filter="internship" aria-pressed="false">Internships</button>
+				<button type="button" class="filter-pill is-active" data-filter="hackathon" aria-pressed="false">Hackathons</button>
+			</div>
 
-		<div class="intern-grid">
-			<article class="intern-card">
-				<div class="intern-content">
-					<div class="intern-period">
-						<div class="badge">Summer 2024</div>
-						<div class="intern-preview"><img class="intern"  src="https://picsum.photos/400/400?grayscale"></div>
-					</div>
-					
-					<div class="intern-text">
-						<h3 class="intern-title">STEMworks Program: RAI Hawaii LLC</h3>
-						<div class="bar"></div>
-
-						<div class="intern-act">
-							<div class="pill">Advertising & Content Creation<i class="fa-solid fa-display" id="intern-icon"></i></div>	
-							<div class="pill">Activity Coordination<i class="fa-solid fa-robot" id="intern-icon"></i></div>
-						</div>
-
-
-						<div class="intern-info">
-				        	<p class="intern-desc">Brainstormed and designed 10 coding activity cards using robots like KIBO and LEGO SPIKE. Using pre-existing card activities and blending them with locally and culturally inspired themes.</p>
-				        	<div class="comp-link">
-				        		<a href="" class="link-btn">View Details</a>
-				        	</div>
-				    	</div>
-					</div>
-				</div>				
-			</article>
-
-			<article class="intern-card">
-				<div class="intern-content">
-					<div class="intern-period">
-						<div class="badge">Summer 2025</div>
-						<div class="intern-preview"><img class="intern"  src="Public/pictures/intern2.png"></div>
-					</div>
-					
-					<div class="intern-text">
-						<h3 class="intern-title">STEMworks Program: Manoa Cottage <i class="fa-solid fa-house-chimney-medical" id="intern-icon"></i></i></h3>
-						<div class="bar"></div>
-
-						<div class="intern-act">	
-							<div class="pill">GIS Analyst<img src="https://simpleicons.org/icons/arcgis.svg" id="intern-iconimg"></div>
-							<div class="pill">Geospatial Designer<i class="fa-solid fa-laptop-file" id="intern-icon"></i></div>
-							<div class="pill">Emergency Management Mapping Specialist<i class="fa-solid fa-fire" id="intern-icon"></i></div>	
-						</div>
-
-						<div class="intern-info">
-				        	<p class="intern-desc">Mapped Manoa Cottage's Kaimuki and Manoa facilities, creating 6 indoor fire evacuation maps utilizing Figma and GIS. Transforming architectural drawing into clear, comprehensive building layouts taught me the significance of combining design & data visualization for protection.</p>
-				        	<div class="comp-link">
-				        		<a href="" class="link-btn">View Details</a>
-				        	</div>
-				    	</div>
-					</div>
-				</div>				
-			</article>
+			
 		</div>
+
+		<p class="sr-only" id="intern-status" aria-live="polite"></p>
+
+		<div class="intern-carousel">
+			<div class="intern-nav">
+				<button type="button" class="nav-btn" data-dir="prev" aria-label="Previous Experiences"><i class="fa-solid fa-arrow-left"></i></button>
+				<button type="button" class="nav-btn" data-dir="next" aria-label="Next Experiences"><i class="fa-solid fa-arrow-right"></i></button>
+			</div>
+
+			<div class="intern-track" tabindex="0" role="region" aria-label="Experiences carousel">
+				<article class="intern-card" data-category="internship">
+					<div class="intern-content">
+						<div class="intern-period">
+							<div class="badge">Summer 2024</div>
+							<div class="intern-preview"><img class="intern"  src="https://picsum.photos/400/400?grayscale"></div>
+						</div>
+						
+						<div class="intern-text">
+							<h3 class="intern-title">Activities Coordinator Intern — STEM Outreach<span>STEMworks Innovation Internship: RAI HAWAII LLC</span></h3>
+							<div class="bar"></div>
+
+							<div class="intern-act">
+
+								<div class="pill">Advertising & Content Creation<i class="fa-solid fa-display" id="intern-icon"></i></div>	
+								<div class="pill">Activity Coordination<i class="fa-solid fa-robot" id="intern-icon"></i></div>
+							</div>
+
+
+							<div class="intern-info">
+					        	<p class="intern-desc">Developed age-appropriate robotics learning materials for RAI HAWAII LLC, targeting students/keiki primarily in Elementary School (1st grade to 6th Grade).A dapted pre-existing card activities and blending them with locally and culturally inspired themes.</p>
+					        	<div class="comp-link">
+					        		<a href="" class="link-btn">View Details</a>
+					        	</div>
+					    	</div>
+						</div>
+					</div>				
+				</article>
+				<article class="intern-card" data-category="internship">
+					<div class="intern-content">
+						<div class="intern-period">
+							<div class="badge">Summer 2025</div>
+							<div class="intern-preview"><img class="intern"  src="Public/pictures/intern2.png"></div>
+						</div>
+						
+						<div class="intern-text">
+							<h3 class="intern-title">GIS Intern — Emergency Evacuation Mapping<span>STEMworks Innovation Internship: Manoa Cottage</span></h3>
+							<div class="bar"></div>
+
+							<div class="intern-act">	
+								<div class="pill">GIS Analyst<img src="https://simpleicons.org/icons/arcgis.svg" id="intern-iconimg"></div>
+								<div class="pill">Geospatial Designer<i class="fa-solid fa-laptop-file" id="intern-icon"></i></div>
+								<div class="pill">Emergency Management Mapping Specialist<i class="fa-solid fa-fire" id="intern-icon"></i></div>	
+							</div>
+
+							<div class="intern-info">
+					        	<p class="intern-desc">Designed 8 location-specific indoor fire evacuation map versions for Manoa Cottage’s Manoa and Kaimuki facilities in Honolulu using design and assessment software like Figma and ArcGIS. Translated 2 architectural drawings into clear building layouts spanning 4 care homes and 8,000+ square feet.</p>
+					        	<div class="comp-link">
+					        		<a href="" class="link-btn">View Details</a>
+					        	</div>
+					    	</div>
+						</div>
+					</div>				
+				</article>
+				<article class="intern-card" data-category="hackathon">
+					<div class="intern-content">
+						<div class="intern-period">
+							<div class="badge">Fall 2025</div>
+							<div class="intern-preview"><img class="intern"  src="https://picsum.photos/400/400?grayscale"></div>
+						</div>
+						
+						<div class="intern-text">
+							<h3 class="intern-title">Hawaii Annual Code Challenge (HACC)<span>MAKFR - Reviewer & Application Dashboard</span></h3>
+							<div class="bar"></div>
+
+							<div class="intern-act">
+								<div class="pill">High School</div>	
+								<div class="pill">Community<i class="fa-solid fa-code" id="intern-icon"></i></div>	
+								<div class="pill">Front-end Developer<i class="fa-solid fa-brush" id="intern-icon"></i></div>
+							</div>
+
+
+							<div class="intern-info">
+					        	<p class="intern-desc">An extended, month-long hackathon-style event launched in 2016 by the State of Hawaii. In partnership with the State of Hawaii Office of Enterprise Technology Serves and UH.
+					        		<br>
+					        		<br>
+					        	An AI-powered resume summarization for faster applicant evaluation that streamlines the outdated hiring process by using AI to simplify applications, summarize resumes, and support faster, clearer decision‑making for employers.
+					        </p>
+					        	<div class="comp-link">
+					        		<a href="https://haic.hawaii.gov/main/4688/" class="link-btn">View Details</a>
+									<a href="https://github.com/aiea-nglnx/HACC2025---MAKFR.git" class="link-btn link-btn--alt">View GitRepo</a>
+					        	</div>
+					    	</div>
+						</div>
+					</div>				
+				</article>
+				<article class="intern-card" data-category="hackathon">
+					<div class="intern-content">
+						<div class="intern-period">
+							<div class="badge">Fall 2026</div>
+							<div class="intern-preview"><img class="intern"  src="https://picsum.photos/400/400?grayscale"></div>
+						</div>
+						
+						<div class="intern-text">
+							<h3 class="intern-title">Claude Impact Lab: UCI × SoCal Affordable Housing<span>Landora & OC Quote Quest</span></h3>
+							<div class="bar"></div>
+
+							<div class="intern-act">
+								<div class="pill">College</div>	
+								<div class="pill">Community<i class="fa-solid fa-code" id="intern-icon"></i></div>	
+								<div class="pill">Front-end Developer<i class="fa-solid fa-brush" id="intern-icon"></i></div>
+							</div>
+
+
+							<div class="intern-info">
+					        	<p class="intern-desc">An AI hackathon and Impact lab for affordable homeownership.
+					        		<br>
+					        		<br>
+					        	Local non-profits in affordable housing for low-income families face abundant challenges. 
+					        		<br>
+					        		<br>
+					        	Designed for small housing nonprofits, congregations with underused land, and city housing staff, the platform screens Orange County parcels against California housing laws and public hazard maps to support early-stage site evaluation.
+					        </p>
+					        	<div class="comp-link">
+					        		<a href="https://luma.com/uci-impact-lab?tk=o4opHu" class="link-btn">View Details</a>
+									<a href="https://github.com/aiea-nglnx/claude-impact-lab-uci.git" class="link-btn link-btn--alt">Team Project</a>
+									<a href="https://github.com/aiea-nglnx/OC-Quote-Quest.git" class="link-btn link-btn--alt">Solo Project</a>
+					        	</div>
+					    	</div>
+						</div>
+					</div>				
+				</article>
+				<article class="intern-card" data-category="hackathon">
+					<div class="intern-content">
+						<div class="intern-period">
+							<div class="badge">Fall 2026</div>
+							<div class="intern-preview"><img class="intern"  src="https://picsum.photos/400/400?grayscale"></div>
+						</div>
+						
+						<div class="intern-text">
+							<h3 class="intern-title">UC San Diego CSES: SanD Hacks<span>SmellCast</span></h3>
+							<div class="bar"></div>
+
+							<div class="intern-act">
+								<div class="pill">College</div>	
+								<div class="pill">User Interface<i class="fa-solid fa-code" id="intern-icon"></i></div>	
+								<div class="pill">Front-end Developer<i class="fa-solid fa-brush" id="intern-icon"></i></div>
+							</div>
+
+
+							<div class="intern-info">
+					        	<p class="intern-desc">SanD Hacks, UC San Diego's premier student-run hackathon, bringing together innovative minds to build, create, and collaborate over 48 hours
+					        		<br>
+					        		<br>
+					        	Smellcast--Experimental street-level forecast of hydrogen sulfide (H₂S) across the South Bay of San Diego for the next 24 hours, with evening-before alerts in English and Spanish. Not an official advisory; official readings: SDAPCD.</p>
+					        	<div class="comp-link">
+					        		<a href="https://hackathon.csesatucsd.com/" class="link-btn">View Details</a>
+									<a href="https://github.com/galacticaledge/sandhacks-2026.git" class="link-btn link-btn--alt">View Git Repo</a>
+									<a href="https://smellcast.us/" class="link-btn link-btn--alt">Website</a>
+					        	</div>
+					    	</div>
+						</div>
+					</div>				
+				</article>
+
+			</div>
+		</div>
+
+			
+
+			
+
+			
 	</section>
 
 	<section class="cert-section">
@@ -494,5 +619,74 @@
 	  });
 	});
 
+</script>
+
+<script>
+	(function () {
+		var section = document.querySelector('.internship-section');
+		var track = section.querySelector('.intern-track');
+		var cards = Array.prototype.slice.call(track.querySelectorAll('.intern-card'));
+		var filters = Array.prototype.slice.call(section.querySelectorAll('.filter-pill'));
+		var nav = section.querySelector('.intern-nav');
+		var prev = section.querySelector('[data-dir="prev"]');
+		var next = section.querySelector('[data-dir="next"]');
+		var status = section.querySelector('#intern-status');
+		var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+		function behavior() {
+			return reduceMotion.matches ? 'auto' : 'smooth';
+		}
+
+		// width of one card plus the gap
+		function stepSize() {
+			var card = cards.filter(function (c) { return !c.hidden; })[0];
+			if (!card) return 0;
+			var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+			return card.offsetWidth + gap;
+		}
+
+		// arrows only show when there's something to scroll to
+		function updateNav() {
+			var max = track.scrollWidth - track.clientWidth;
+			nav.hidden = max <= 2;
+			prev.disabled = track.scrollLeft <= 2;
+			next.disabled = track.scrollLeft >= max - 2;
+		}
+
+		prev.addEventListener('click', function () {
+			track.scrollBy({ left: -stepSize(), behavior: behavior() });
+		});
+
+		next.addEventListener('click', function () {
+			track.scrollBy({ left: stepSize(), behavior: behavior() });
+		});
+
+		filters.forEach(function (btn) {
+			btn.addEventListener('click', function () {
+				var value = btn.dataset.filter;
+				var shown = 0;
+
+				filters.forEach(function (b) {
+					var active = b === btn;
+					b.classList.toggle('is-active', active);
+					b.setAttribute('aria-pressed', String(active));
+				});
+
+				cards.forEach(function (card) {
+					var match = value === 'all' || card.dataset.category === value;
+					card.hidden = !match;
+					if (match) shown++;
+				});
+
+				track.scrollTo({ left: 0, behavior: 'auto' });
+				updateNav();
+				status.textContent = shown + (shown === 1 ? ' experience shown' : ' experiences shown');
+			});
+		});
+
+		track.addEventListener('scroll', updateNav, { passive: true });
+		window.addEventListener('resize', updateNav);
+		updateNav();
+	})();
 </script>
 </html>
